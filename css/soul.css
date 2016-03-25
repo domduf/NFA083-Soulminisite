@@ -1,0 +1,152 @@
+/* style du site general */
+body {
+color:#FBC31A;/*#FFDB70*/
+margin:5; /*evite barre defilement*/
+background-color: black;
+background-size:20%;
+background-image: url("../images/logoSoul.png");
+background-position:90% 3%;
+background-attachment:fixed;
+background-repeat:no-repeat;
+font-family : Century Schoolbook L;
+text-align:justify;
+}
+
+footer a {color:#9C622E;}
+footer a:hover {color:#FED789;}
+
+
+footer {margin-left:10%;
+margin-right:10%;
+background-color:black;
+
+font-size:15px;
+color:#FBC31A;
+bottom:5px;
+}
+
+
+.cachee {
+display:none;}
+
+H1 {
+font-size: 50px;
+}
+H2 {
+font-size:20px;
+}
+#accrocheAccueuil {
+margin-left:8%;
+margin-right:5%;
+margin-top:3%;
+margin-bottom:3%;
+background-color:rgba(167, 85, 9, 0.5);/*#4F4424;*/
+border-style:solid;
+border-width:5px;
+border-color:#FFDB8C;
+border-radius:6px;
+padding:20px;
+font-size:15px;
+
+}
+p {
+font-size:13px;
+}
+
+#TitreSoul {
+padding:15px;
+display: flex;
+flex-direction: row-reverse;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+#visuel {
+width:60%;
+max-width:800px;
+max-height:587px;
+min-width:200px;
+min-height:147px;
+}
+#visuelSon {
+width:80%;
+max-width:800px;
+max-height:587px;
+min-width:200px;
+min-height:147px;
+}
+#centre {
+padding:10px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+/*===========MENU ===============*/
+
+#menu ul {
+display:block;
+width:175px;
+padding:10;
+margin:0;
+list-style-type:none;
+text-align:center;
+}
+
+#menu li {
+list-style-type: none; 
+position: relative;
+display:block;
+width:175px;
+padding:0;
+background-color:#FFDB8C; 
+border:1px solid;
+border-color: #696969 #204a87 #204a87 #696969 ;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+
+#menu a {
+ display:block;
+ width:175px;
+ background-color:#FFDB8C ;
+ text-decoration:none;
+ text-align:center;
+ color:black;
+ border:1px solid;
+ border-color:#204a87 #696969 #696969 #204a87;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+ }
+
+#menu ul ul {display:none;
+position: absolute;
+left: 175px;
+top: 0px;
+margin: 0px; 
+padding: 0px;
+}
+
+#menu li a:hover {
+background-image:linear-gradient(to right,#9B4A0B,#FFDB8C);
+background-image:-webkit-linear-gradient(to right,#9B4A0B,#FFDB8C);
+background-image:-moz-linear-gradient(to right,#9B4A0B,#FFDB8C);
+} 
+ 
+#menu ul li ul { 
+display:none;
+}
+ 
+#menu ul li:hover ul {
+display:block;
+}
+
+#menu li:hover ul li {
+float:none;
+}
+
+#menu li ul {
+position:absolute;
+}
