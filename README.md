@@ -2,5 +2,5 @@
 Ici seront déposés les fichiers du mini site
 Travaux de Hery et Dominique.
 
-Le MCD est visile avec jMerise.
+Le MCD de la nouvelle base de donnee est visible avec le programme jMerise.
 Voir dans docs/jMerise
