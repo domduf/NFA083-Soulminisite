@@ -53,6 +53,7 @@
     <p><img src ="./images/musicos/Ribus.jpg" /> Le plus rapide: Ribus</p>
     <p><img src ="./images/musicos/ArnoGuitare.jpg" /> Le plus agile: Arnaud</p>
     <p><img src ="./images/musicos/Bol.jpg" /> Le plus responsable: Bobol</p>
+    <p><img src ="./images/musicos/Nono.jpg" /> Le plus charmeur: Nono</p>    
     <p><img src ="./images/musicos/StfG.jpg" /> Le plus souple: Stephane</p>
     <p><img src ="./images/musicos/Dom.jpg" /> Le plus long: Dom</p>
     <p><img src ="./images/musicos/Pip.jpg" /> Le plus calin: Pip</p>
