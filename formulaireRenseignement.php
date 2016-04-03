@@ -92,7 +92,7 @@
       <input onblur="kapcharepFunc()" type="text"  name="kapcharep" id="kapcharep"  /> <span id="errKapcha"></span><div> * Champ obligatoires.</div></p>
      
      <br/>
-    <p><input type="submit" value="Envoyer au secretaire Dufour." /> ou alors...<input type="reset" value="J'annule tout, désolé." />
+    <p><input type="submit" value="Envoyer à notre secretaire" /> ou alors...<input type="reset" value="J'annule tout, désolé." />
     </p>
     </form>	
 
@@ -109,7 +109,7 @@
 <!-- ============= Appels de scripts JS ================== -->
 <script src='./javascripts/validationChamps.js' type = 'text/javascript' ></script>
 <script src='./javascripts/date.js' type = 'text/javascript' ></script>
-
+<script src='./javascripts/kapcha.js' type = 'text/javascript' ></script>
 
 </body>
 
