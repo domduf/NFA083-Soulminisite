@@ -105,6 +105,12 @@
 
 <!-- ===================== BAS DE PAGE  ===================== -->
 <?php include("includes/basDePage.php"); ?>
+
+<!-- ============= Appels de scripts JS ================== -->
+<script src='./javascripts/validationChamps.js' type = 'text/javascript' ></script>
+<script src='./javascripts/date.js' type = 'text/javascript' ></script>
+
+
 </body>
 
 </html>
