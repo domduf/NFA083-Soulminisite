@@ -40,8 +40,8 @@
 <!-- ======================================================= -->
 
 <section id="accrocheAccueuil">
-    <H3>Une machine de dix musiciens prête à vous faire remonter le temps en un clin d'oeil.</H3>
-    <p>Soul Latitude accompagne vos Comités d'Entreprise, Festivals, Evènements privés, Séminaires, Inaugurations, Vernissages. </p>
+    <H3>Vous souhaitez en savoir plus sur nous, recevoir des news, pouvoir nous rencontrer.</H3>
+    <p>Merci de ien vouloir remplir ce formulaire, et nous vous contactons au plus vite. </p>
 </section>
 <!-- ===================== VISUEL ===================== -->
 
