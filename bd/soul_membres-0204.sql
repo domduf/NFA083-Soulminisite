@@ -158,7 +158,7 @@ INSERT INTO `membre` (`mem_id`, `mem_activite`, `mem_civilite`, `mem_Nom`, `mem_
 --
 
 CREATE TABLE `se_connecter` (
-  `se_connecter_mdp` char(50) NOT NULL,
+  `se_connecter_mdp` char(255) NOT NULL, -- permet d'entrer des mdp cryptés assez longs, voir http://php.net/manual/fr/function.password-hash.php
   `mem_id` char(12) NOT NULL,
   `acces_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
