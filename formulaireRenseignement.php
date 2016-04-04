@@ -53,7 +53,7 @@
 <div>
 
 <!-- Début du FORMULAIRE -->
-	<form name="preInscription"  method="POST" action="InscriptionRenseignement.php" onsubmit="return valider()" >
+	<form name="preInscription"  method="POST" action="enregistrementRenseignement.php" onsubmit="return valider()" >
 	
 	
 		<!-- retour du script date.js -->
@@ -80,6 +80,9 @@
 	<input onblur="telFunc()" type="tel" name="monTel" id="monTel" /><br/>
 	
     <div> * Champ obligatoires.</div>
+    
+    <label for="Remarques">Votre message (merci d'éviter les &#139; ou &#155;)  <span id="errRem"></span></label><br/> 
+    <textarea onblur="remFunc()" placeholder="Pitié, évitez le...&quot;c'est parce que j'aime ça !&quot;" name="rem" id="rem"></textarea>
 
     </fieldset> </div>
     
