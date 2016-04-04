@@ -53,6 +53,28 @@ p {
 font-size:13px;
 }
 
+/* style de la zone de texte 
+"Vos remarques sur votre choix"
+du formulaire*/
+textarea {
+width : 60% ;
+height : 150px;
+}
+
+/*.Champscoordonnee label {
+display:block;
+margin-left: 2%;
+}*/	
+
+/*alignement des "input" du formulaire */
+.Champscoordonnee  input {
+display:block;
+color :#9F9378;
+margin-left:90px;
+}
+
+
+
 #TitreSoul {
 padding:15px;
 display: flex;

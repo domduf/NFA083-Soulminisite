@@ -1,0 +1,54 @@
+//alert( ' Info --->  Javascript validationChamps.js  ' ); // histoire de voir si le lien vers le script pointe bien au bon endroit.
+
+document.preInscription.NOM.focus();
+
+
+function valider() {
+  //declaration des variables:
+  var $entreeNom = document.preInscription.NOM.value;
+  var $longueurSaisieNom = $entreeNom.length;
+  var $entreeTel = document.preInscription.monTel.value;
+  var $longSaisieTel = $entreeTel.length;
+  var $email= document.preInscription.monMail.value;
+
+  // expressions régulières:
+  var $regexNomCaractereSpeciaux = /\W/.test($entreeNom); // alert ('regEx du Nom: '+ $regexNom);
+                                                        //renvoie true si un caractere accentué est detecté, et le stock dans une variable.
+
+
+  // test de l'email
+  function estUnEmail(myVar){  // trouvé sur http://www.analyste-programmeur.com
+       // La 1ère étape consiste à définir l'expression régulière d'une adresse email
+       var $regEmail = new RegExp('^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$','i');
+
+       return $regEmail.test(myVar);
+     }
+
+
+  if ( ! estUnEmail($email)) { // si pas de la forme email
+  alert ('email non OK');
+  document.preInscription.monMail.focus();
+  return false;
+  };                         // sinon on continue
+
+
+  //tests de la saisie du NOM et Télephone:
+
+  if ($regexNomCaractereSpeciaux){
+  alert ('Merci de n\'écrire que des caractères sans accents ni de caractères spéciaux'); //alert ('regEx du Nom: '+ $regexNom);
+  document.preInscription.NOM.focus();
+  return false;
+  };
+
+
+  if($longueurSaisieNom >= 2 && $longSaisieTel == 10  && ! isNaN($entreeTel)){ /* test si NOM a au moins deux caractères 
+  																			ET 10 caractères dans n° tel
+																			ET tel uniquement composés de chiffres (un nombre quoi !) */
+    return true;}
+  else {
+    alert ('saisies du Nom avec 2 caractères minimum \nET du téléphone sur 10 vrais chiffres obligées \n Merci de recommencer ');
+    document.preInscription.NOM.focus(); // focus sur le champ de nom 'NOM'
+    return false;}
+  
+
+}
