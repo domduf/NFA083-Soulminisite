@@ -113,13 +113,13 @@ function emailFunc(){
     if ( ! estUnEmail($email)) { // si pas de la forme email
     $erreur.style.color= "red";
     $erreur.innerHTML= ('le format n\'est pas bon !');
-    document.preInscription.monMail.value=""; 
-    //document.preInscription.monMail.focus();
+    document.preInscription.monMail.value="";
     }
     
     else {
     $erreur.style.color= "green";
     $erreur.innerHTML= (' ok !');
+    document.getElementById('monTel').focus();
     }
   }
 
@@ -145,6 +145,7 @@ function telFunc(){
   else {  
   $erreur.style.color= "green";
   $erreur.innerHTML= (' ok ! ');
+  document.getElementById('rem').focus();
   }
   
 }
@@ -166,6 +167,7 @@ function remFunc(){
   $erreur.style.color= "green";
   $erreur.innerHTML= ('merci beaucoup.');
   $attention='';
+  document.getElementById('kapcharep').focus();
     }
 
   }
