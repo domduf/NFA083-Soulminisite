@@ -40,8 +40,8 @@
 <!-- ======================================================= -->
 
 <section id="accrocheAccueuil">
-    <H3>Vous souhaitez en savoir plus sur nous, recevoir des news, pouvoir nous rencontrer.</H3>
-    <p>Merci de ien vouloir remplir ce formulaire, et nous vous contactons au plus vite. </p>
+    <H3>Vous souhaitez en savoir plus sur notre groupe, recevoir des news, pouvoir nous rencontrer.</H3>
+    <p>Merci de bien vouloir remplir ce formulaire, et nous vous contactons au plus vite. </p>
 </section>
 <!-- ===================== VISUEL ===================== -->
 
@@ -80,9 +80,11 @@
 	<input onblur="telFunc()" type="tel" name="monTel" id="monTel" /><br/>
 	
     <div> * Champ obligatoires.</div>
-    
-    <label for="Remarques">Votre message (merci d'éviter les &#139; ou &#155;)  <span id="errRem"></span></label><br/> 
-    <textarea onblur="remFunc()" placeholder="Pitié, évitez le...&quot;c'est parce que j'aime ça !&quot;" name="rem" id="rem"></textarea>
+    </fieldset>
+    <p>   </p>
+    <fieldset ><legend>Votre message:</legend>
+    <label for="Remarques"><span id="errRem"></span></label><br/> 
+    <textarea onblur="remFunc()" placeholder="(merci d'éviter les caractères spéciaux)" name="rem" id="rem"></textarea>
 
     </fieldset> </div>
     

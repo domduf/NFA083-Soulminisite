@@ -36,7 +36,7 @@ function nomFunc() {
   else if ($regexCaracteresSpeciaux){
        //alert ('erreur caracteres speciaux');
        $erreur.style.color= "red";
-       $erreur.innerHTML= ('pas de caract. spéciaux SVP');  
+       $erreur.innerHTML= (' pas de caract. spéciaux SVP');  
        document.preInscription.nom.value=""; 
        }
        
@@ -49,7 +49,7 @@ function nomFunc() {
   
   else { //alert ('OK');
        $erreur.style.color= "green";
-       $erreur.innerHTML = 'ok !';
+       $erreur.innerHTML = ' ok !';
        $entreeNom=$entreeNom.toUpperCase();
        document.preInscription.nom.value=$entreeNom
        //var $majuscules=$entreeNom.toUpperCase();
@@ -59,6 +59,7 @@ function nomFunc() {
        }
   }
 //==============validation  du Prénom======================
+
 function prenomFunc() {
       $entreePrenom = document.preInscription.prenom.value;
   var $erreur= document.getElementById('errPrenom');
@@ -73,14 +74,14 @@ function prenomFunc() {
   if ($regexChiffre){
        //alert ('erreur chiffre'); 
        $erreur.style.color= "red";
-       $erreur.innerHTML = 'pas de chiffre SVP'; 
+       $erreur.innerHTML = ' pas de chiffre SVP'; 
        document.preInscription.prenom.value="";    
        }
   
   else if ($regexCaracteresSpeciaux){
        //alert ('erreur caracteres speciaux');
        $erreur.style.color= "red";
-       $erreur.innerHTML= ('pas de caract. spéciaux SVP');
+       $erreur.innerHTML= (' pas de caract. spéciaux SVP');
        document.preInscription.prenom.value="";  
        }
        
@@ -88,8 +89,8 @@ function prenomFunc() {
   
   else { //alert ('OK');
        $erreur.style.color= "green";
-       $erreur.innerHTML = 'ok !';
-       document.getElementById('age').focus();
+       $erreur.innerHTML = ' ok !';
+       document.getElementById('monMail').focus();
        }
 
   }
@@ -113,12 +114,12 @@ function emailFunc(){
     $erreur.style.color= "red";
     $erreur.innerHTML= ('le format n\'est pas bon !');
     document.preInscription.monMail.value=""; 
-    document.preInscription.monMail.focus();
+    //document.preInscription.monMail.focus();
     }
     
     else {
     $erreur.style.color= "green";
-    $erreur.innerHTML= ('ok !');
+    $erreur.innerHTML= (' ok !');
     }
   }
 
@@ -131,19 +132,19 @@ function telFunc(){
   
   if ( isNaN($tel)){
   $erreur.style.color= "red";
-  $erreur.innerHTML= ('(juste des chiffres SVP)');
+  $erreur.innerHTML= (' (juste des chiffres SVP)');
   document.preInscription.monTel.value="";  
   }
   
   else if ($longTel !=10){
   $erreur.style.color= "red";
-  $erreur.innerHTML= ('(10 chiffres SVP)');
+  $erreur.innerHTML= (' (10 chiffres SVP)');
   document.preInscription.monTel.value="";    
   }   
   
   else {  
   $erreur.style.color= "green";
-  $erreur.innerHTML= ('ok ! ');
+  $erreur.innerHTML= (' ok ! ');
   }
   
 }
@@ -153,16 +154,17 @@ function remFunc(){
   $rem= document.preInscription.rem.value;
   var $erreur = document.getElementById('errRem');
   //alert ("dans rem"+ $rem);
-  var $regexCaracteresSpeciaux = $rem.match(/\<|\>/);
+  var $regexCaracteresSpeciaux = $rem.match(/\<|\%|\$|\#|\>/);
   
   if ($regexCaracteresSpeciaux){
   $erreur.style.color= "red";
-  $erreur.innerHTML= ('...attention !!! '+$regexCaracteresSpeciaux );
+  $erreur.innerHTML= ('pas de...'+$regexCaracteresSpeciaux +  '...SVP. ' );
   $attention=1;
      }
      
   else{
-  $erreur.innerHTML= ('');
+  $erreur.style.color= "green";
+  $erreur.innerHTML= ('merci beaucoup.');
   $attention='';
     }
 
