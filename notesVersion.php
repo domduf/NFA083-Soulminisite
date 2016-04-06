@@ -44,7 +44,7 @@
   	<span>
   		<H2>Notes de version</H2>
   		
-  		<p>istallation git</p>
+  		<p>installation versionning by git</p>
   	
   	</span>
 
