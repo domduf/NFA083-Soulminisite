@@ -46,8 +46,7 @@
   		
   		<p>Wed Apr 6 23:15:16 2016 +0200 installation versionning by git</p>
   		<p>début de mise en place de la maj via ssh et Git sur hebergeur</br>
-  		voir ici la copie d'écran:
-  	
+  		voir <a href="./docs/publierAvecGitAutomatisation.png">ici la copie d'écran.<a/>
   	</span>
 
 
