@@ -44,7 +44,9 @@
   	<span>
   		<H2>Notes de version</H2>
   		
-  		<p>installation versionning by git</p>
+  		<p>Wed Apr 6 23:15:16 2016 +0200 installation versionning by git</p>
+  		<p>début de mise en place de la maj via ssh et Git sur hebergeur</br>
+  		voir ici la copie d'écran:
   	
   	</span>
 
