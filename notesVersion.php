@@ -44,10 +44,12 @@
   	<span>
   		<H2>Notes de version</H2>
   		
-  		<p>Wed Apr 6 23:15:16 2016 +0200 installation versionning by git</p>
-  		<p>début de mise en place de la maj via ssh et Git sur hebergeur</br>
+  		<p>Wed Apr 6	installation versionning by git</p>
+  		<p>Wed Apr 27	début de mise en place de la maj via ssh et Git sur hebergeur</br>
   		voir <a href="./docs/publierAvecGitAutomatisation.png">ici la copie d'écran.<a/>
-  	</span>
+  	</span> </p>
+  		<p>Sun May 1	simplification bd -> 1er mai</p>
+
 
 
 
