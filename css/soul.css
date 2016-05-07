@@ -104,6 +104,13 @@ justify-content: space-around;
 align-items: center;
 }
 
+#article-musicos {
+max-width:450px;
+max-height:200px;
+min-width:100px;
+min-height:100px;
+}
+
 /*===========MENU ===============*/
 
 #menu ul {
