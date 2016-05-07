@@ -42,9 +42,28 @@
 </section>
 <!-- ===================== VISUEL ===================== -->
 
+
+<!-- ============= Test de la BDD ========== -->
+<span id="testbdd">
+	<p>test ici </p>
+	<?php
+		$requete1="SELECT * FROM membre"; /* tester la connection et afficher ttes les données de la table membre */
+		require("includes/connection.php");
+		afficherbdd($requete1);
+	?>
+	
+	
+</span>
+
+
 <section id="centre">
 <!-- ===================== MENU ===================== -->
 <?php include("includes/menu.php"); ?>
+
+
+
+
+<!-- ================== Article ici ======================= -->
     <span ><img src ="./images/uneMachineDeDix.png" />
     
     <p><img src ="./images/musicos/Dine.jpg" /> La plus belle: Sandrine</p>
@@ -62,6 +81,7 @@
 
 </section>
 <!-- ======================================================= -->
+
 
 
 
