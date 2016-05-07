@@ -80,12 +80,12 @@
 	<p>test ici </p>
 	<?php
 	$sql = "SELECT mem_nom, mem_prenom, mem_lien_photo, mem_article FROM membre WHERE mem_activite = 'oui'";
-	$noms= $pdo->query($sql);
-	while ($nom = $noms->fetch()) {?>
-		<p><?php echo $nom['mem_prenom']; ?> 
-		<img src =" <?php echo $nom['mem_lien_photo'] ; ?> "/>
+	$musicos= $pdo->query($sql);
+	while ($musico = $musicos->fetch()) {?>
+		<p><?php echo $musico['mem_prenom']; ?> 
+		<img src =" <?php echo $musico['mem_lien_photo'] ; ?> "/>
 		<br/> 
-		<?php echo $nom['mem_article']; ?> 
+		<?php echo $musico['mem_article']; ?> 
 		<?php
 		}
 	
