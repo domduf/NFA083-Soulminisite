@@ -1,33 +1,21 @@
-<?php /* fichier de connection à la base de donnée, à inclure dans la ou les pages concernées. */
+<?php /* fichier de connection à la base de donnée, à inclure dans la ou les pages concernées. 
+		source: memento PHP5 & SQL */
 
-	function afficherbdd($requete) {
 		
 		/* DECLARATION des Variables de connection à la bdd */
-		$serveur = 'localhost';
-		$loginserveur = 'root';
-		$mdpserveur = '';
-		$nombdd = 'soul_5mai';
+		$dsn="mysql:host=localhost;dbname=soul_5mai;charset=UTF8";
+		$login = "root";
+		$pass= "";
 		
-		/* CONNECTION serveur, definition du charset, connection BDD, requete SQL */
-		$con = mysqli_connect($serveur, $loginserveur, $mdpserveur)
-			or die ("Impossible de se connecter : " . mysql_error()); /* affiche erreur si problème */
-		$con->set_charset('utf8');
-		mysqli_select_db($con, $nombdd);
+		/* CONNECTION serveur*/
+		$pdo= new PDO($dsn, $login, $pass);
 		
-		$resultat = mysqli_query($con, $requete);
-		
-		/* AFFICHAGE de toutes les données demandées par la requete */
-		while ($donnees = @mysqli_fetch_row($resultat)) {
-			foreach ($donnees as $don) {
-			echo $don . ' | ' ;
-			}; ?>
-			<br/>
-			<br/><?php
-		}
-	}
+		/* EXEPTION en cas d'erreur */
+		$pdo->setAttribute(PDO::ATTR_ERRMODE,
+							PDO::ERRMODE_EXCEPTION);
+							
+	
 		
 ?>
-		
-
 		
 		

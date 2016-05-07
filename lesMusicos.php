@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 
+<!-- ================ Connection bdd via PDO ================ -->
+<?php include("includes/connection.php"); ?>
+
+
+
+
 <!-- ======================================================= -->
 <head>
 
@@ -43,28 +49,50 @@
 <!-- ===================== VISUEL ===================== -->
 
 
-<!-- ============= Test de la BDD ========== -->
+<!-- ============= Test de la BDD via functions.php ========= 
 <span id="testbdd">
 	<p>test ici </p>
 	<?php
-		$requete1="SELECT * FROM membre"; /* tester la connection et afficher ttes les données de la table membre */
-		require("includes/connection.php");
+		$requete1=" SELECT mem_nom N, mem_prenom P FROM  WHERE mem_persona LIKE 'G%' ORDER BY mem_nom "; /* tester la connection et afficher ttes les données de la table membre */
+		require("includes/functions.php");
+		
 		afficherbdd($requete1);
 	?>
+</span>  -->
 	
 	
-</span>
+
+
 
 
 <section id="centre">
-<!-- ===================== MENU ===================== -->
-<?php include("includes/menu.php"); ?>
+	<!-- ===================== MENU ===================== -->
+	<?php include("includes/menu.php"); ?>
 
 
 
 
-<!-- ================== Article ici ======================= -->
-    <span ><img src ="./images/uneMachineDeDix.png" />
+	<!-- ================== Article ici ======================= -->
+    <span id="article-musicos"><img src ="./images/uneMachineDeDix.png" />
+    
+	<!-- ============= Test de la BDD via PDO ========= -->	
+
+	<p>test ici </p>
+	<?php
+	$sql = "SELECT mem_nom, mem_prenom, mem_lien_photo, mem_article FROM membre WHERE mem_activite = 'oui'";
+	$noms= $pdo->query($sql);
+	while ($nom = $noms->fetch()) {?>
+		<p><?php echo $nom['mem_prenom']; ?> 
+		<img src =" <?php echo $nom['mem_lien_photo'] ; ?> "/>
+		<br/> 
+		<?php echo $nom['mem_article']; ?> 
+		<?php
+		}
+	
+	?>
+
+
+<!-- Ecriture article HTML classique 
     
     <p><img src ="./images/musicos/Dine.jpg" /> La plus belle: Sandrine</p>
     <p><img src ="./images/musicos/Michel.jpg" /> Le plus grand: Michel</p>
@@ -77,9 +105,9 @@
     <p><img src ="./images/musicos/Dom.jpg" /> Le plus long: Dom</p>
     <p><img src ="./images/musicos/Pip.jpg" /> Le plus calin: Pip</p>
     </span>
+-->
 
-
-</section>
+	</section>
 <!-- ======================================================= -->
 
 
