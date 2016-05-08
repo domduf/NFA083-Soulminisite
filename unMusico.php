@@ -11,7 +11,7 @@
 <head>
 
 <meta charset="UTF-8" lang="fr"/>
-<meta name="Soul Latitude"  content="Soul Latitude presentation des musiciens "/>
+<meta name="Soul Latitude"  content="Soul Latitude presentation de  "/>
 
 <link rel="icon" href="soullat2.ico" />
 
@@ -28,10 +28,17 @@
   <section>
     <p>                </p>
   </section>
-  <section id="Titre" >
   
-    <H1>Les Musiciens <span class="cachee">Soul Latitude</span></H1>
+  <!-- ============ ICI le titre avec le nom transmis par l'URL ============-->
+  <section id="Titre" >
+    <H1>
+    <?php if(isset($_GET['prenomMusico']))  {echo 'Soul\' membre: '?></br><?php  echo $_GET['prenomMusico'];} ?> 
+    <span class="cachee">Soul Latitude</span></H1>
   </section>
+  
+  
+  
+  
 <!-- ===================== CONTACTS ===================== -->
   <section id="contactsTitre">
     <H2>Contacts</H2>
@@ -40,31 +47,9 @@
   </section>
 </header>
 
-<!-- ======================================================= 
 
-<section id="accrocheAccueuil">
-    
-    <p><img src ="./images/uneMachineDeDix.jpg" /></p>
-</section>
-
-== -->
 
 <!-- ===================== VISUEL ===================== -->
-
-
-<!-- ============= Test de la BDD via functions.php ========= 
-<span id="testbdd">
-	<p>test ici </p>
-	<?php
-		$requete1=" SELECT mem_nom N, mem_prenom P FROM  WHERE mem_persona LIKE 'G%' ORDER BY mem_nom "; /* tester la connection et afficher ttes les données de la table membre */
-		require("includes/functions.php");
-		
-		afficherbdd($requete1);
-	?>
-</span>  -->
-	
-	
-
 
 
 
@@ -76,32 +61,38 @@
 
 
 	<!-- ================== Article ici ======================= -->
-    <span>
-    <img src ="./images/uneMachineDeDix.png" />
+    <span id="accrocheAccueuil">
+   
     
 	<!-- ============= Test de la BDD via PDO ========= -->	
 	<?php
 	
+	/* recuperation de la variable transmise par l'URL */
+	$prenomMusico =  $_GET['prenomMusico'];
+	
+	
 	/*  Requete de sélection des musiciens, et tri par sexe et prénom */
-	$sql = "SELECT 		mem_prenom,mem_description_musico, mem_lien_photo
+	$sql = "SELECT 		*
 			FROM 		membre 
-			WHERE 		mem_activite = 'oui' 
-			ORDER BY 	mem_sexe DESC, mem_prenom";
+			WHERE 		mem_prenom = '$prenomMusico' AND mem_activite= 'oui' ";
 			
 	$musicos= $pdo->query($sql);
 	
-	/* Boucle d'affichage */
+	/* "Boucle" d'affichage */
 	while ($musico = $musicos->fetch()) {?>
 		<p>
 		<!--  lien par l'image, et transmission de l'adressse via l'URL en PHP -->
-		<a href= "unMusico.php?prenomMusico=<?php echo $musico['mem_prenom'];?>">
-		<img src ="<?php echo $musico['mem_lien_photo'] ; ?>"/>
-		</a>
 		
-		<?php echo $musico["mem_description_musico"]. ': ' . $musico['mem_prenom']; ?> 
+		<img src ="<?php echo $musico['mem_lien_photo'] ; ?>"/>
+		
+		
+		<?php echo $musico["mem_description_musico"]. ': </br> <H3>' . $musico['mem_prenom']. ' '.$musico['mem_nom']; ?> </H3>
+		</p>
+		<p>
+		<?php echo $musico["mem_article"]; ?> 
 		</p>
 		<?php
-		}
+		};
 	
 	?>
 	</span>
