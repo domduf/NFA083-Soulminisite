@@ -50,7 +50,7 @@ font-size:15px;
 
 }
 p {
-font-size:13px;
+font-size:14px;
 }
 
 /* style de la zone de texte 
@@ -101,10 +101,23 @@ min-height:147px;
 padding:10px;
 display: flex;
 justify-content: space-around;
-align-items: center;
+/*align-items: center;*/
+}
+
+#article-musicos {
+max-width:450px;
+max-height:200px;
+min-width:100px;
+min-height:100px;
 }
 
 /*===========MENU ===============*/
+
+#posMenu { /* pour remonter tout le menu en haut */
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
 
 #menu ul {
 display:block;
