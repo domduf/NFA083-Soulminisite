@@ -40,30 +40,8 @@
   </section>
 </header>
 
-<!-- ======================================================= 
+<!-- ======================================================= -->
 
-<section id="accrocheAccueuil">
-    
-    <p><img src ="./images/uneMachineDeDix.jpg" /></p>
-</section>
-
-== -->
-
-<!-- ===================== VISUEL ===================== -->
-
-
-<!-- ============= Test de la BDD via functions.php ========= 
-<span id="testbdd">
-	<p>test ici </p>
-	<?php
-		$requete1=" SELECT mem_nom N, mem_prenom P FROM  WHERE mem_persona LIKE 'G%' ORDER BY mem_nom "; /* tester la connection et afficher ttes les données de la table membre */
-		require("includes/functions.php");
-		
-		afficherbdd($requete1);
-	?>
-</span>  -->
-	
-	
 
 
 
