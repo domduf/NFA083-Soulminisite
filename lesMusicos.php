@@ -46,6 +46,9 @@
     
     <p><img src ="./images/uneMachineDeDix.jpg" /></p>
 </section>
+
+== -->
+
 <!-- ===================== VISUEL ===================== -->
 
 
@@ -73,22 +76,30 @@
 
 
 	<!-- ================== Article ici ======================= -->
-    <span id="article-musicos"><img src ="./images/uneMachineDeDix.png" />
+    <span>
+    <img src ="./images/uneMachineDeDix.png" />
     
 	<!-- ============= Test de la BDD via PDO ========= -->	
 	<?php
-	$sql = "SELECT mem_nom, mem_prenom, mem_lien_photo, mem_article FROM membre WHERE mem_activite = 'oui'";
+	
+	/*  Requete de sélection des musiciens, et tri par sexe et prénom */
+	$sql = "SELECT 		mem_prenom,mem_description_musico, mem_lien_photo
+			FROM 		membre 
+			WHERE 		mem_activite = 'oui' 
+			ORDER BY 	mem_sexe DESC, mem_prenom";
+			
 	$musicos= $pdo->query($sql);
+	
+	/* Boucle d'affichage */
 	while ($musico = $musicos->fetch()) {?>
-		<p><?php echo $musico['mem_prenom']; ?> </p>
-		<img src =" <?php echo $musico['mem_lien_photo'] ; ?> "/>
-		<br/> 
-		<?php echo $musico['mem_article']; ?> 
+		<p><img src ="<?php echo $musico['mem_lien_photo'] ; ?>"/>
+		<?php echo $musico["mem_description_musico"]. ': ' . $musico['mem_prenom']; ?> 
+		</p>
 		<?php
 		}
 	
 	?>
- </span>
+	</span>
 
 <!-- Ecriture article HTML classique 
     
@@ -105,7 +116,7 @@
     </span>
 -->
 
-	</section>
+</section>
 <!-- ======================================================= -->
 
 
