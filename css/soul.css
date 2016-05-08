@@ -101,7 +101,7 @@ min-height:147px;
 padding:10px;
 display: flex;
 justify-content: space-around;
-align-items: center;
+/*align-items: center;*/
 }
 
 #article-musicos {
@@ -112,6 +112,12 @@ min-height:100px;
 }
 
 /*===========MENU ===============*/
+
+#posMenu { /* pour remonter tout le menu en haut */
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
 
 #menu ul {
 display:block;
