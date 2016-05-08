@@ -11,11 +11,11 @@
 <head>
 
 <meta charset="UTF-8" lang="fr"/>
-<meta name="Soul Latitude"  content="Groupe musique RythmNBlues dix musiciens concerts live "/>
+<meta name="Soul Latitude"  content="Soul Latitude presentation des musiciens "/>
 
 <link rel="icon" href="soullat2.ico" />
 
-<title>Soul Latitude | Musicos </title>
+<title>Soul Latitude | Les musiciens </title>
 <link href="./css/soul.css" rel="stylesheet" type="text/css" />
 </head>
 <!-- ======================================================= -->

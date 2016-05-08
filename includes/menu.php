@@ -1,5 +1,5 @@
 <!-- ici se trouve le menu, que l'on retrouve sur chaque page du site-->
-<div id = posMenu>
+<div id = posMenu> <!-- permet de mettre en boite flex le menu -->
 
 <nav id = menu>
 	<ul>
@@ -26,10 +26,6 @@
 
 	</ul>
 </nav>
-
-
-
-
 
 
 
