@@ -28,11 +28,29 @@
   <section>
     <p>                </p>
   </section>
+ 
+ 
+ 	<?php
+	
+	/* recuperation de la variable transmise par l'URL */
+	if (isset ($_GET['idMusico'])) { $idMusico =  $_GET['idMusico'];};
+	
+	
+	/*  Requete de sélection des musiciens, et tri par sexe et prénom */
+	$sql = "SELECT 		*
+			FROM 		membre 
+			WHERE 		mem_id = '$idMusico' AND mem_activite= 'oui' ";
+			
+	$musicos= $pdo->query($sql);?>
+ 
+ 	<?php
+	/* "Boucle" d'affichage */
+while ($musico = $musicos->fetch()) {?>
   
   <!-- ============ ICI le titre avec le nom transmis par l'URL ============-->
   <section id="Titre" >
     <H1>
-    <?php if(isset($_GET['prenomMusico']))  {echo 'Soul\' membre: '?></br><?php  echo $_GET['prenomMusico'];} ?> 
+    <?php echo 'Soul\' membre: '?></br><?php  echo $musico['mem_prenom'].',</br> '. $musico["mem_description_musico"].'.'; ?> 
     <span class="cachee">Soul Latitude</span></H1>
   </section>
   
@@ -64,44 +82,32 @@
     <span id="accrocheAccueuil">
    
     
-	<!-- ============= Test de la BDD via PDO ========= -->	
-	<?php
-	
-	/* recuperation de la variable transmise par l'URL */
-	$prenomMusico =  $_GET['prenomMusico'];
-	
-	
-	/*  Requete de sélection des musiciens, et tri par sexe et prénom */
-	$sql = "SELECT 		*
-			FROM 		membre 
-			WHERE 		mem_prenom = '$prenomMusico' AND mem_activite= 'oui' ";
-			
-	$musicos= $pdo->query($sql);
-	
-	/* "Boucle" d'affichage */
-	while ($musico = $musicos->fetch()) {?>
+
+
+
 		<p>
 		<!--  lien par l'image, et transmission de l'adressse via l'URL en PHP -->
-		
+		<H3><?php echo $musico['mem_prenom']. ' '.$musico['mem_nom']; ?> </H3></br>
 		<img src ="<?php echo $musico['mem_lien_photo'] ; ?>"/>
 		
 		
-		<?php echo $musico["mem_description_musico"]. ': </br> <H3>' . $musico['mem_prenom']. ' '.$musico['mem_nom']; ?> </H3>
+		
 		</p>
 		<p>
 		<?php echo $musico["mem_article"]; ?> 
 		</p>
-		<?php
-		};
+		
+
 	
-	?>
+	
 	</span>
 
 
 </section>
 <!-- ======================================================= -->
 
-
+<?php 
+		};?>
 
 
 <?php include("includes/basDePage.php"); ?>

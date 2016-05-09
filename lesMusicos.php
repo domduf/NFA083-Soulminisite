@@ -61,7 +61,7 @@
 	<?php
 	
 	/*  Requete de sélection des musiciens, et tri par sexe et prénom */
-	$sql = "SELECT 		mem_prenom,mem_description_musico, mem_lien_photo
+	$sql = "SELECT 		mem_id, mem_prenom,mem_description_musico, mem_lien_photo
 			FROM 		membre 
 			WHERE 		mem_activite = 'oui' 
 			ORDER BY 	mem_sexe DESC, mem_prenom";
@@ -72,11 +72,11 @@
 	while ($musico = $musicos->fetch()) {?>
 		<p>
 		<!--  lien par l'image, et transmission de l'adressse via l'URL en PHP -->
-		<a href= "unMusico.php?prenomMusico=<?php echo $musico['mem_prenom'];?>">
+		<a href= "unMusico.php?idMusico=<?php echo $musico['mem_id'];?>">
 		<img src ="<?php echo $musico['mem_lien_photo'] ; ?>"/>
 		</a>
 		
-		<?php echo $musico["mem_description_musico"]. ': ' . $musico['mem_prenom']; ?> 
+		<?php echo $musico["mem_description_musico"]. ': ' . $musico['mem_prenom'].$musico['mem_id']; ?> 
 		</p>
 		<?php
 		}
