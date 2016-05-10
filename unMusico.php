@@ -39,9 +39,7 @@
 	/*  Requete de sélection des musiciens, et tri par sexe et prénom */
 	$sql = "SELECT 		*
 			FROM 		membre AS M, instrument as I, jouer AS J
-			WHERE 		M.mem_id = '$idMusico' AND M.mem_activite= 'oui' 
-			AND M.mem_id = J.mem_id
-			AND I.inst_id = J.inst_id";
+			WHERE 		M.mem_id = '$idMusico' AND M.mem_activite= 'oui' ";
 			
 	$musicos= $pdo->query($sql);?>
  
