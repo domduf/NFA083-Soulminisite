@@ -99,20 +99,22 @@ while ($musico = $musicos->fetch()) {?>
 		<?php echo $musico["mem_article"]; ?> 
 		</p>
 	
-		<p>
+		
 	<?php	
 	/*  Requete de sélection des instruments, et tri par nom */
-	$sql2 = "SELECT 		*
+	$sql2 = "SELECT 		inst_nom
 			FROM 		membre AS M, instrument as I, jouer AS J
 			WHERE 		M.mem_id = '$idMusico' AND M.mem_activite= 'oui' 
 			AND M.mem_id = J.mem_id
 			AND I.inst_id = J.inst_id";
 			
-	$intrus= $pdo->query($sql2);	
+	$instrus= $pdo->query($sql2);?> 
+	
+	<p>	<?php
 	/* "Boucle" d'affichage */
-		while ($instrus = $instru->fetch()) {
+		while ($instru = $instrus->fetch()) {
 				
-			echo $musico["inst_nom"]; }?> 
+			echo $instru["inst_nom"].' '; }?> 
 		</p>
 	
 	
