@@ -38,8 +38,10 @@
 	
 	/*  Requete de sélection des musiciens, et tri par sexe et prénom */
 	$sql = "SELECT 		*
-			FROM 		membre 
-			WHERE 		mem_id = '$idMusico' AND mem_activite= 'oui' ";
+			FROM 		membre AS M, instrument as I, jouer AS J
+			WHERE 		M.mem_id = '$idMusico' AND M.mem_activite= 'oui' 
+			AND M.mem_id = J.mem_id
+			AND I.inst_id = J.inst_id";
 			
 	$musicos= $pdo->query($sql);?>
  
@@ -96,8 +98,24 @@ while ($musico = $musicos->fetch()) {?>
 		<p>
 		<?php echo $musico["mem_article"]; ?> 
 		</p>
-		
-
+	
+		<p>
+	<?php	
+	/*  Requete de sélection des instruments, et tri par nom */
+	$sql2 = "SELECT 		*
+			FROM 		membre AS M, instrument as I, jouer AS J
+			WHERE 		M.mem_id = '$idMusico' AND M.mem_activite= 'oui' 
+			AND M.mem_id = J.mem_id
+			AND I.inst_id = J.inst_id";
+			
+	$intrus= $pdo->query($sql2);	
+	/* "Boucle" d'affichage */
+		while ($instrus = $instru->fetch()) {
+				
+			echo $musico["inst_nom"]; }?> 
+		</p>
+	
+	
 	
 	
 	</span>
