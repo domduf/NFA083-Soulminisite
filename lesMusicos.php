@@ -76,7 +76,7 @@
 		<img src ="<?php echo $musico['mem_lien_photo'] ; ?>"/>
 		</a>
 		
-		<?php echo $musico["mem_description_musico"]. ': ' . $musico['mem_prenom'].$musico['mem_id']; ?> 
+		<?php echo $musico["mem_description_musico"]. ': ' . $musico['mem_prenom']; ?> 
 		</p>
 		<?php
 		}
