@@ -82,24 +82,8 @@ while ($musico = $musicos->fetch()) {?>
     <span id="accrocheAccueuil">
    
     
-
-
-
-		<p>
-		<!--  lien par l'image, et transmission de l'adressse via l'URL en PHP -->
-		<H3><?php echo $musico['mem_prenom']. ' '.$musico['mem_nom']; ?> </H3></br>
-		<img src ="<?php echo $musico['mem_lien_photo'] ; ?>"/>
-		
-		
-		
-		</p>
-		<p>
-		<?php echo $musico["mem_article"]; ?> 
-		</p>
-		
-
 	<!-- mettre instrument joué(s) par musico ici -->
-	<?php /*  Requete de sélection des musiciens, et tri par sexe et prénom */
+	<?php 
 		/*echo ($idMusico);*/
 		$sql2 = "SELECT 		inst_nom, mem_id 
 			FROM 	 instrument AS I JOIN jouer AS J ON I.inst_id = J.inst_id
@@ -109,11 +93,25 @@ while ($musico = $musicos->fetch()) {?>
 			$instrus= $pdo->query($sql2);
 			
 			?>
-		<p>joue:
-		<?php while ($instru = $instrus->fetch()) {
-		echo $instru["inst_nom"].' </br> '; } ?> 
-		</p>
+
 	
+
+	
+		<!--  lien par l'image, et transmission de l'adressse via l'URL en PHP -->
+		<H3><?php echo $musico['mem_prenom']. ' '.$musico['mem_nom'].', <br/> '; 
+		while ($instru = $instrus->fetch()) {
+		echo $instru["inst_nom"].' </br> '; } ?> </H3></br>
+		<img src ="<?php echo $musico['mem_lien_photo'] ; ?>"/>
+		
+		
+		
+		
+		<p>
+		<?php echo $musico["mem_article"]; ?> 
+		</p>
+		
+
+
 	
 	
 	</span>
