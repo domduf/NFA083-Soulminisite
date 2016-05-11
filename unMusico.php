@@ -98,6 +98,22 @@ while ($musico = $musicos->fetch()) {?>
 		</p>
 		
 
+	<!-- mettre instrument joué(s) par musico ici -->
+	<?php /*  Requete de sélection des musiciens, et tri par sexe et prénom */
+		/*echo ($idMusico);*/
+		$sql2 = "SELECT 		inst_nom, mem_id 
+			FROM 	 instrument AS I JOIN jouer AS J ON I.inst_id = J.inst_id
+			WHERE mem_id=	'$idMusico'
+			";
+			/*echo ($sql2);*/
+			$instrus= $pdo->query($sql2);
+			
+			?>
+		<p>joue:
+		<?php while ($instru = $instrus->fetch()) {
+		echo $instru["inst_nom"].' </br> '; } ?> 
+		</p>
+	
 	
 	
 	</span>
