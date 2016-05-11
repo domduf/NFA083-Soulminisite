@@ -22,11 +22,12 @@
 <!-- ===================== TITRE ===================== -->
 <header id="TitreSoul">
   <section>
-    <p>                </p>
+    <p id= "btcontact">      <a href="./back_office.php"> <img src="./images/since2004.png"></a>  </p>
   </section>
   <section id="Titre" >
   
     <H1>Groupe <span class="cachee">Soul Latitude</span></H1>
+    
   </section>
 
 <!-- ===================== CONTACTS ===================== -->
