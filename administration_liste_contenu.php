@@ -75,10 +75,10 @@
  			
   		      	<tr>
         			<th>Votre choix: ?</th>
-        				<td>	<input type="radio" name="rad-1" id="rad1" checked="checked" value="adminitrer_gestion_musiciens.php" />gestion de la base des musiciens.<br />
-             					<input type="radio" name="rad-1" id="rad2" value="" />consultation des messages d' internautes.<br />
-             					<input type="radio" name="rad-1"  id="rad3"  value="item3" />fichier csv.<br />
-             					<input type="radio" name="rad-1" id="rad4"  value="item4" />gestion des droits.</td>
+        				<td><input type="radio" name="rad-1" id="rad1" checked="checked" value="item1" />gestion de la base des musiciens.<br />
+             				<input type="radio" name="rad-1" id="rad2" value="item2" />consultation des messages d' internautes.<br />
+             				<input type="radio" name="rad-1"  id="rad3"  value="item3" />fichier csv.<br />
+             				<input type="radio" name="rad-1" id="rad4"  value="item4" />gestion des droits.</td>
       			</tr>	
       			
       			<tr>
