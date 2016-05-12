@@ -27,7 +27,7 @@
   </section>
   <section id="Titre" >
   
-    <H1>liste administaration </br>back-office <span class="cachee">Soul Latitude</span></H1>
+    <H1>Liste administration </br>Back-office <span class="cachee">Soul Latitude</span></H1>
   </section>
 
 <!-- ===================== CONTACTS ===================== -->
@@ -61,7 +61,7 @@
 	/* test de login et mdp */
 	if ($administrateur = $administrateurs->fetch()) {?>
 		<p>
-		<?php echo $administrateur["mem_login"]. ': ' . $administrateur['mem_mdp']; ?> 
+		<?php /*echo $administrateur["mem_login"]. ': ' . $administrateur['mem_mdp']; */ ?> 
 		</p>
 		  		<H2><?php echo 'Bienvenue '.$login.'.'; ?> </H2>
   		
@@ -69,29 +69,34 @@
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
   		Soyez sûr de ce que vous faites.</p>
   		
-  		<form action="./administration_liste_contenu.php">
+  		<form name="form_liste_contenu" method="POST" action="./administration_page.php">
   			<table>
 		
  			
   		      	<tr>
         			<th>Votre choix: ?</th>
-        				<td >	<input type="radio" name="rad-1" id="rad1" checked="checked" value="adminitrer_gestion_musiciens.php" />gestion des musiciens<br />
-             					<input type="radio" name="rad-1" id="rad2" value="item2" />choix 2<br />
-             					<input type="radio" name="rad-1"  id="rad3"  value="item3" />choix 3<br />
-             					<input type="radio" name="rad-1" id="rad4"  value="item4" />choix 4</td>
+        				<td>	<input type="radio" name="rad-1" id="rad1" checked="checked" value="adminitrer_gestion_musiciens.php" />gestion de la base des musiciens.<br />
+             					<input type="radio" name="rad-1" id="rad2" value="" />consultation des messages d' internautes.<br />
+             					<input type="radio" name="rad-1"  id="rad3"  value="item3" />fichier csv.<br />
+             					<input type="radio" name="rad-1" id="rad4"  value="item4" />gestion des droits.</td>
+      			</tr>	
+      			
+      			<tr>
+        			<th>C'est parti mon kiki</th>
+        			<td><input type="submit" name="soumission" id="soumission" value="Soumettre" /></td>
       			</tr>
   		</table>
   		</form>
 		
 		<?php
 		}
-		else echo 'pas le droit d\'entrer ici...';
+		else echo 'Mot de passe et/ou login incorrect...';
   	
   	?> 
   	
 
   		<p><a href ="./index.php">ici lien vers retour accueuil</a></p>
-  		<p></p>
+  
 
 	</span>
 
