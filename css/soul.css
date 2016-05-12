@@ -111,6 +111,10 @@ min-width:100px;
 min-height:100px;
 }
 
+
+#administration {
+color :#FA4A33;
+}
 /*===========MENU ===============*/
 
 #posMenu { /* pour remonter tout le menu en haut */

@@ -5,7 +5,7 @@
 <head>
 
 <meta charset="UTF-8" lang="fr"/>
-<meta name="Soul Latitude"  content="Groupe musique RythmNBlues dix musiciens concerts live "/>
+<meta name="Soul Latitude"  content="liens contenus administrables"/>
 
 <link rel="icon" href="soullat2.ico" />
 
@@ -24,7 +24,7 @@
   </section>
   <section id="Titre" >
   
-    <H1>Connection </br>back-office <span class="cachee">Soul Latitude</span></H1>
+    <H1>liste administaration </br>back-office <span class="cachee">Soul Latitude</span></H1>
   </section>
 
 <!-- ===================== CONTACTS ===================== -->
@@ -41,28 +41,29 @@
 <!-- ===================== MENU ===================== -->
 	<?php include("includes/menu.php"); ?>
 
-  	<span>
-  		<H2>Administrateur du site, connectez vous:</H2>
+  	<span id="administration">
+  	
+  	
+  	<?php /*données à transmettre pour la connection à la bd */
+  	$login=$_POST ['user-name']; $mdp=$_POST ['user-passwd']; ?> 
+  	
+  		<H2><?php echo 'Bienvenue '.$login.'.'; ?> </H2>
   		
   		
+  		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
+  		Soyez sûr de ce que vous faites.</p>
   		
-  		<form name="formConnect" method="POST" action="./administration_liste_contenu.php">
+  		<form action="./administration_liste_contenu.php">
   			<table>
-  	     		<tr>
-        			<th >login</th>
-        			<td ><input type="text" size="25" name="user-name" value="toto" id="user-name"/></td>
+		
+ 			
+  		      	<tr>
+        			<th>Votre choix: ?</th>
+        				<td >	<input type="radio" name="rad-1" id="rad1" checked="checked" value="adminitrer_gestion_musiciens.php" />Radio 1<br />
+             					<input type="radio" name="rad-1" id="rad2" value="item2" />Radio 2<br />
+             					<input type="radio" name="rad-1"  id="rad3"  value="item3" />Radio 3<br />
+             					<input type="radio" name="rad-1" id="rad4"  value="item4" />Radio 4</td>
       			</tr>
-
-      			<tr>
-        			<th >mot de passe</th>
-        			<td ><input type="password" size="10" name="user-passwd" id="user-passwd" /></td>
-      			</tr>	      
-      			
-      			<tr>
-        			<th  >Se connecter</th>
-        			<td ><input type="submit" name="soumission" id="soumission" value="Soumettre" /></td>
-      			</tr>	
- 
   		</table>
   		</form>
   		<p></p>
