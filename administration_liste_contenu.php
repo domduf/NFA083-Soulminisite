@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 
+<!-- ================ Connection bdd via PDO ================ -->
+<?php include("includes/connection.php"); ?>
+
 <!-- ======================================================= -->
 <head>
 
@@ -45,9 +48,22 @@
   	
   	
   	<?php /*données à transmettre pour la connection à la bd */
-  	$login=$_POST ['user-name']; $mdp=$_POST ['user-passwd']; ?> 
+  	$login=$_POST ['user-name']; $mdp=$_POST ['user-passwd']; 
   	
-  		<H2><?php echo 'Bienvenue '.$login.'.'; ?> </H2>
+  	$sql = "SELECT 		mem_login, mem_mdp
+			FROM 		membre 
+			WHERE 		mem_persona = 'Gestionaire' 
+				AND mem_login ='$login'
+				AND mem_mdp = '$mdp' " ;
+			
+  	$administrateurs= $pdo->query($sql);
+	
+	/* test de login et mdp */
+	if ($administrateur = $administrateurs->fetch()) {?>
+		<p>
+		<?php echo $administrateur["mem_login"]. ': ' . $administrateur['mem_mdp']; ?> 
+		</p>
+		  		<H2><?php echo 'Bienvenue '.$login.'.'; ?> </H2>
   		
   		
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
@@ -59,14 +75,22 @@
  			
   		      	<tr>
         			<th>Votre choix: ?</th>
-        				<td >	<input type="radio" name="rad-1" id="rad1" checked="checked" value="adminitrer_gestion_musiciens.php" />Radio 1<br />
-             					<input type="radio" name="rad-1" id="rad2" value="item2" />Radio 2<br />
-             					<input type="radio" name="rad-1"  id="rad3"  value="item3" />Radio 3<br />
-             					<input type="radio" name="rad-1" id="rad4"  value="item4" />Radio 4</td>
+        				<td >	<input type="radio" name="rad-1" id="rad1" checked="checked" value="adminitrer_gestion_musiciens.php" />gestion des musiciens<br />
+             					<input type="radio" name="rad-1" id="rad2" value="item2" />choix 2<br />
+             					<input type="radio" name="rad-1"  id="rad3"  value="item3" />choix 3<br />
+             					<input type="radio" name="rad-1" id="rad4"  value="item4" />choix 4</td>
       			</tr>
   		</table>
   		</form>
-  		<p></p>
+		
+		<?php
+		}
+		else echo 'pas le droit d\'entrer ici...';
+  	
+  	?> 
+  	
+
+  		<p><a href ="./index.php">ici lien vers retour accueuil</a></p>
   		<p></p>
 
 	</span>
