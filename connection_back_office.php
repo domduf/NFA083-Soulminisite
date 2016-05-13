@@ -45,9 +45,16 @@
 	<?php include("includes/menu.php"); ?>
 
   	<span>
+  	
   		<H2>Administrateur du site, connectez vous:</H2>
   		
   		
+  		
+  		
+  		<?php 
+  		session_start();
+  		
+  		if (!isset ($_SESSION['login'])) { /*test*/?> 
   		
   		<form name="formConnect" method="POST" action="./administration_liste_contenu.php">
   			<table>
@@ -66,8 +73,18 @@
         			<td ><input type="submit" name="soumission" id="soumission" value="Soumettre" /></td>
       			</tr>	
  
-  		</table>
+  			</table>
   		</form>
+  		
+  		<?php }
+  		
+  		else {
+  		echo $_SESSION['login'];
+  		
+  		}
+  		 
+  		 ?>
+  
   		<p></p>
   		<p></p>
 

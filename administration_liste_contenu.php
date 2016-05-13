@@ -46,11 +46,14 @@
 
   	<span id="administration">
   	
+  	<?php ?>
   	
   	<?php /*données à transmettre pour la connection à la bd */
-  	$login=$_POST ['user-name']; $mdp=$_POST ['user-passwd']; 
+  	$login=htmlentities($_POST ['user-name'],ENT_QUOTES); $mdp=$_POST ['user-passwd']; 
+
   	
-  	$sql = "SELECT 		mem_login, mem_mdp
+  	
+  	$sql = "SELECT 		mem_prenom, mem_login, mem_mdp
 			FROM 		membre 
 			WHERE 		mem_persona = 'Gestionaire' 
 				AND mem_login ='$login'
@@ -59,11 +62,18 @@
   	$administrateurs= $pdo->query($sql);
 	
 	/* test de login et mdp */
-	if ($administrateur = $administrateurs->fetch()) {?>
+	if ($administrateur = $administrateurs->fetch()) {
+		  	
+		  	
+		  	/* ouverture d'une session */
+		  	session_start();
+  			$_SESSION['login']=$login;
+  			echo $_SESSION['login'] /*test*/
+  			;?>
 		<p>
 		<?php /*echo $administrateur["mem_login"]. ': ' . $administrateur['mem_mdp']; */ ?> 
 		</p>
-		  		<H2><?php echo 'Bienvenue '.$login.'.'; ?> </H2>
+		  		<H2><?php echo 'Bienvenue '.$administrateur['mem_prenom'].'<br> alias '.$login.'.'; ?> </H2>
   		
   		
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
@@ -90,6 +100,8 @@
 		
 		<?php
 		}
+		
+		
 		else echo 'Mot de passe et/ou login incorrect...';
   	
   	?> 
