@@ -11,7 +11,7 @@
 
 <link rel="icon" href="soullat2.ico" />
 
-<title>Soul Latitude | Rythm N'Blues </title>
+<title>Soul Latitude | Header </title>
 <link href="./css/soul.css" rel="stylesheet" type="text/css" />
 </head>
 <!-- ======================================================= -->
@@ -20,20 +20,25 @@
 <body>
 
 <header id="TitreSoul">
-  <section id="bann1" >
+
+<!-- ===================== bannière ===================== -->
+  <div id="bann1" >
   <p><img src="./images/banniere_1.jpg" width="100%"/></p>
-  </section>
-  <section id="bann2" >
+  </div>
+  <div id="bann2" >
   <p><img src="./images/banniere_2.jpg" width="100%"/></p>
-  </section>
+  </div>
 
 <!-- ===================== logo ===================== -->
-  <section id="logo">
-  <p><img src="./images/logoSoul.png" width="20%"/></p>
-  </section>  
-  
+  <div id="logo">
+  <p><img src="./images/logoSoul.png" width="40%"/></p>
+  </div>  
+ 
+<!-- ===================== bouton connexion ===================== -->
+<div id="bouton">
+<a href="./back/session_connex.php">Connexion</a>
+</div> 
+ 
   
 </header>
-</body>
 
-</html>

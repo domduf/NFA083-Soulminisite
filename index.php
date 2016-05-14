@@ -17,23 +17,32 @@
 
 <body>
 
+
 <!-- ===================== HEADER ===================== -->
+<section id= "header">
 <?php include("includes/header.php"); ?>
+</section>
+
 
 <h1> Soul Latitude: Groupe musique RythmNBlues  </h1>
 
-<section id="centre">
 <!-- ===================== MENU ===================== -->
+<nav id= "menu">
 <?php include("includes/menu.php"); ?>
+</nav>
 
+<aside>
+<?php include("includes/aside.php"); ?>
+</aside>
 
+<section id="centre">
 
 <img id="visuel" src="./images/soulLatitudeOfficielleTruc.png" />
 
-<!-- ===================== ASIDE ===================== -->
-<?php include("includes/aside.php"); ?>
-
 </section>
+
+
+
 <!-- ======================================================= -->
 <!-- ======================================================= -->
 

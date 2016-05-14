@@ -1,7 +1,4 @@
 /* style du site general */
-* {
-  box-sizing: border-box; /* pour maîtriser width et flex-basis */
-}
 
 html {
   display: flex; flex-direction: column; /* correction bug IE de min-height non appliqué à body */
@@ -21,26 +18,6 @@ background-repeat:no-repeat;
 font-family : Century Schoolbook L;
 text-align:justify;
 }
-
-.wrapper {
-  flex: 1 1 auto; /* occupe la hauteur restante */
-  display: flex; /* crée un contexte flex pour ses enfants */
-}
-
-nav,
-aside {
-  width: 10em;
-}
-
-#visuel {
-  flex: 1; /* occupe la largeur restante */
-}
-
-nav {
-  order: -1; /* nav s'affiche en premier */
-}
-
-
 
 
 
@@ -78,19 +55,19 @@ font-size:13px;
 /* mise en page du header */
 
 #TitreSoul {
-padding:15px;
+flex:auto;
+margin-bottom:100px;
 display: flex;
-flex-direction: row-reverse;
-flex-wrap: wrap;
-justify-content: space-around;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-between;
+align-items:center;
 }
 
-#TitreSoul #bann1 {
-  width:50%;
-  position:relative;
-  left:-550px;
-  text-align:left;
-  webkit-animation:step1 8s linear 8s infinite alternate;
+#bann1 {
+   width:100%;
+   margin-left:100px;
+   webkit-animation:step1 8s linear 8s infinite alternate;
 	-moz-animation:step1 8s linear 8s infinite alternate;
 			animation:step1 8s linear 8s infinite alternate;
 }
@@ -104,11 +81,9 @@ justify-content: space-around;
 			to {opacity :0;}
             }
             
-#TitreSoul #bann2{
-	width:50%;	
-	position : relative;
-	right:-100px;
-	text-align:left;
+#bann2{
+  	width:100%;	
+	margin-left:-500px;
 	-webkit-animation:step2 8s linear 8s infinite alternate;
 	-moz-animation:step2 8s linear 8s infinite alternate;
 			animation:step2 8s linear 8s infinite alternate;
@@ -123,12 +98,55 @@ justify-content: space-around;
             }
 
 #logo{
-  width:90%;
-  position:relative;
-  text-align:right;
-  top:-150px;
-  left:-150px;
+   width:100%;
+    margin-left:50px;
   
+}
+
+#bouton{
+   -moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	-webkit-box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dbe6c4), color-stop(1, #9ba892));
+	background:-moz-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+	background:-webkit-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+	background:-o-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+	background:-ms-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+
+	background-color:#dbe6c4;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #b2b8ad;
+	display:inline-block;
+  text-align:right;
+	cursor:pointer;
+	color:#757d6f;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:8px 35px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ced9bf;
+  
+}
+
+#bouton:hover {
+  
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9ba892), color-stop(1, #dbe6c4));
+	background:-moz-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+	background:-webkit-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+	background:-o-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+	background:-ms-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+	background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+
+	background-color:#9ba892;  
+}
+
+#bouton:active {
+ 
+	top:1px;
 }
 
 #aside1{
@@ -138,6 +156,7 @@ border-color: #696969 #204a87 #204a87 #696969 ;
 text-align:center;
 background-color:#FFDB8C;
 color:black;
+float:right;
 }
 
 
@@ -230,6 +249,14 @@ float:none;
 position:absolute;
 }
 
+
+#boiteformulaire {
+  display:flex;
+  flex-direction:column;
+  width:900px;
+  height:600px;
+  
+}
 /* Responsive (fenêtres de moins de 640px) */
 
 @media (max-width: 640px) {
@@ -242,10 +269,19 @@ position:absolute;
   }
   nav,
   aside,
-  article {
+  #visuel {
     flex-basis: auto; /* pour écraser la valeur 0, due au flex: 1 */
   }
   nav {
     order: 0; /* nav reprend sa place */
+  }
+  #TitreSoul #bann1 {
+  
+  left:50px;
+  }
+  
+  #TitreSoul #bann2 {
+ 
+  left:100px;
   }
 }
