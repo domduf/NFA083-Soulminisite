@@ -45,7 +45,7 @@
 	<?php include("includes/menu.php"); ?>
 <!-- ================================================ -->
 
-  		<span>
+  		<span id="administration">
 
   	
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
@@ -56,7 +56,8 @@
   	
   	
   	if ($_SESSION['choix_administration'] == 'messages') {
-  		echo ('messages mon gars');
+  		
+  		include("includes/messages_admin.inc.php");
   	
   	}
   	
@@ -73,6 +74,11 @@
   	
   	}
   	
+  	else { ?>
+  	
+  	<H2> <a href ="./connection_back_office.php">Connectez-vous.</a> </H2>
+  	 
+  <?php	}
   	
   	
   
