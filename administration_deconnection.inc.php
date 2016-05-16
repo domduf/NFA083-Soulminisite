@@ -44,19 +44,12 @@
 <!-- ===================== MENU ===================== -->
 	<?php include("includes/menu.php"); ?>
 
-
-
-  		<span>
-  			<H2 >Vous êtes déconnecté.</H2>
-  		</span>
-  	
-
-	
+	<span>
+  		<H2 >Vous êtes déconnecté.</H2>
+  	</span>
 
 
 </section>
-
-
 
 <!-- ===================== BAS DE PAGE  ===================== -->
 <?php include("includes/basDePage.php"); ?>

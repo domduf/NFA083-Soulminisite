@@ -44,20 +44,29 @@
 <!-- ===================== MENU ===================== -->
 	<?php include("includes/menu.php"); ?>
 
-  	<span id="administration">
-  	
-  	<?php ?>
-  	
-  	<?php /*données à transmettre pour la connection à la bd */
-  	$login=htmlentities($_POST ['user-name'],ENT_QUOTES); 
-  	$mdp=htmlentities($_POST ['user-passwd'],ENT_QUOTES); 
 
   	
+
+  	
+  	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
+  	
+  	if (!isset($_SESSION['login'])){ /*init des variables de session*/
+  	
+  					$_SESSION['login']=htmlentities($_POST ['user-name'],ENT_QUOTES); 
+  					$_SESSION['mdp']=htmlentities($_POST ['user-passwd'],ENT_QUOTES); 
+	
+  	}
+  	
+  	
+  	
+  	
+  	$login=$_SESSION['login'];
+  	$mdp=$_SESSION['mdp'];
   	
   	$sql = "SELECT 		mem_prenom, mem_login, mem_mdp
 			FROM 		membre 
 			WHERE 		mem_persona = 'Gestionaire' 
-				AND mem_login ='$login'
+				AND mem_login = '$login'
 				AND mem_mdp = '$mdp' " ;
 			
   	$administrateurs= $pdo->query($sql);
@@ -66,13 +75,14 @@
 	if ($administrateur = $administrateurs->fetch()) {
 		  	
 
-  			$_SESSION['login']=$login;
-  			echo $_SESSION['login'] /*test*/
-  			;?>
-		<p>
-		<?php /*echo $administrateur["mem_login"]. ': ' . $administrateur['mem_mdp']; */ ?> 
-		</p>
-		  		<H2><?php echo 'Bienvenue '.$administrateur['mem_prenom'].'<br> alias '.$login.'.'; ?> </H2>
+  			
+  			/* echo $_SESSION['login'] test*/?>
+  
+  
+    	<span id="administration">
+  
+
+		<H2><?php echo 'Bienvenue '.$administrateur['mem_prenom'].'<br> alias '.$login.'.'; ?> </H2>
   		
   		
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
@@ -96,20 +106,25 @@
       			</tr>
   		</table>
   		</form>
+		</span>
+		<?php 
 		
-		<?php
+		
+		
 		}
 		
 		
-		else echo 'Mot de passe et/ou login incorrect...';
-  	
-  	?> 
-  	
-
-  		<p><a href ="./index.php">ici lien vers retour accueuil</a></p>
-  
-
-	</span>
+		else {
+		?>
+		<span>
+		<H2>Désolé <?php echo ($_SESSION['login']);?>, mot de passe et/ou login incorrect...</H2>
+		</span>
+		
+		<?php
+		$_SESSION = array();
+  		session_destroy();
+		}
+		?> 
 
 
 </section>
