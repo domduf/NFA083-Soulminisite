@@ -44,18 +44,14 @@
 <!-- ===================== MENU ===================== -->
 	<?php include("includes/menu.php"); ?>
 
-  	<span>
-  	
-  		<H2>Administrateur du site, connectez vous:</H2>
-  		
-  		
-  		
-  		
+
   		<?php 
 
   		
-  		if (!isset ($_SESSION['login'])) { /*test*/?> 
+  		if (!isset ($_SESSION['login'])) { /* si pas encore connecté */?> 
+  		<span>
   		
+  		<H2>Administrateur du site, connectez vous:</H2>
   		<form name="formConnect" method="POST" action="./administration_liste_contenu.php">
   			<table>
   	     		<tr>
@@ -75,20 +71,34 @@
  
   			</table>
   		</form>
-  		
+  		</span>
   		<?php }
   		
-  		else {
-  		echo $_SESSION['login'];
+  		else { /* si déjà connecté */ ?>
+  		<span id="administration">
+  			<H2 ><?php echo $_SESSION['login'];?>, vous êtes connecté,</br> que voulez vous faire ?</H2>
+
+  			<form name="formdeConnect" method="POST" action="./administration_deconnection.inc.php">
+  			<table>
+      			<tr>
+        			<th>Vous déconnecter</th>
+        			<td><input type="submit" name="soumission" id="soumission" value="Soumettre" /></td>
+      			</tr>
+      			<tr>
+      				<th>Retourner sur </th>
+      				<td><a href="administration_liste_contenu.php">la page d'administration ?</a></td>
+      			</tr>	
+  			</table>
+  		</form>	
+  			
+  		</span>
+  		<?php
   		
   		}
   		 
   		 ?>
-  
-  		<p></p>
-  		<p></p>
 
-	</span>
+	
 
 
 </section>
