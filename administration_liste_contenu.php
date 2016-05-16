@@ -94,10 +94,10 @@
  			
   		      	<tr>
         			<th>Votre choix: ?</th>
-        				<td><input type="radio" name="rad-1" id="rad1" checked="checked" value="item1" />gestion de la base des musiciens.<br />
-             				<input type="radio" name="rad-1" id="rad2" value="item2" />consultation des messages d' internautes.<br />
+        				<td><input type="radio" name="rad-1" id="musiciens" checked="checked" value="musiciens" />gestion de la base des musiciens.<br />
+             				<input type="radio" name="rad-1" id="messages" value="messages" />consultation des messages d' internautes.<br />
              				<input type="radio" name="rad-1"  id="rad3"  value="item3" />fichier csv.<br />
-             				<input type="radio" name="rad-1" id="rad4"  value="item4" />gestion des droits.</td>
+             				<input type="radio" name="rad-1" id="droits"  value="droits" />gestion des droits.</td>
       			</tr>	
       			
       			<tr>
@@ -120,7 +120,7 @@
 		<H2>Désolé <?php echo ($_SESSION['login']);?>, mot de passe et/ou login incorrect...</H2>
 		</span>
 		
-		<?php
+		<?php /* deconnection */
 		$_SESSION = array();
   		session_destroy();
 		}

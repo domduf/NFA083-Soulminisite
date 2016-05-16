@@ -79,15 +79,16 @@
   			<H2 ><?php echo $_SESSION['login'];?>, vous êtes connecté,</br> que voulez vous faire ?</H2>
 
   			<form name="formdeConnect" method="POST" action="./administration_deconnection.inc.php">
-  			<table>
+  			<table> 
+  				<tr>
+      				<th>Retourner sur </th>
+      				<td><a href="administration_liste_contenu.php">le menu d'administration ?</a></td>
+      			</tr>
       			<tr>
         			<th>Vous déconnecter</th>
         			<td><input type="submit" name="soumission" id="soumission" value="Soumettre" /></td>
       			</tr>
-      			<tr>
-      				<th>Retourner sur </th>
-      				<td><a href="administration_liste_contenu.php">la page d'administration ?</a></td>
-      			</tr>	
+	
   			</table>
   		</form>	
   			
