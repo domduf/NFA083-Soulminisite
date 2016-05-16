@@ -23,7 +23,7 @@
 <!-- ===================== TITRE ===================== -->
 <header id="TitreSoul">
   <section>
-    <p>                </p>
+    <p>      <?php include("./includes/bouton_connect.inc.php"); ?>          </p>
   </section>
   <section id="Titre" >
   
@@ -65,9 +65,7 @@
 	/* test de login et mdp */
 	if ($administrateur = $administrateurs->fetch()) {
 		  	
-		  	
-		  	/* ouverture d'une session */
-		  	session_start();
+
   			$_SESSION['login']=$login;
   			echo $_SESSION['login'] /*test*/
   			;?>
