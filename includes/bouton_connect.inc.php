@@ -8,6 +8,7 @@
     	<?php }
     	
     	else { /* si connecte */ ?>
+    	<p id="administration"> <?php echo $_SESSION['login']; ?>
     	<a href="./connection_back_office.php"> <img src="./images/since2004_connecte.png"></a>  </p>
     	
     	<?php
