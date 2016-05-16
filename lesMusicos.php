@@ -26,7 +26,7 @@
 <!-- ===================== TITRE ===================== -->
 <header id="TitreSoul">
   <section>
-    <p>                </p>
+    <p> <?php include("./includes/bouton_connect.inc.php"); ?>    </p>
   </section>
   <section id="Titre" >
   
