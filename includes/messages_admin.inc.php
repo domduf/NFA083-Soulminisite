@@ -8,19 +8,30 @@
 	$sqlmessage = "SELECT 		*
 		FROM 		contact " ;
 		
-		$messages= $pdo->query($sqlmessage);
+		$messages= $pdo->query($sqlmessage); ?>
 		
-		if ($message = $messages->fetch()) {
-		?> <p>
-			<?php echo ' |--  '. $message['contact_id'].'  --| '.$message['contact_nom'].'  '.$message['contact_prenom'].' | '.
-						$message['contact_email'].' | '.$message['contact_telephone'].' | '.$message['contact_objet'].' | '.
-						$message['contact_message'].' || '; ?>
-			</p>
-		
+		<table id="tableau_messages">
+		<tr>
+			<th>id</th>
+			<th>Prénom Nom</th>
+			<th>mail</th>
+			<th>tel</th>
+			<th>Objet</th>	
+			<th>Message</th>	
+		</tr>
 		<?php 
-		
+		while ($message = $messages->fetch()) {
+		?> <tr>
+			<td><?php echo $message['contact_id']?></td>
+			<td><?php echo $message['contact_prenom'].' '.$message['contact_nom']?></td>
+			<td><?php echo $message['contact_email']?></td>
+			<td><?php echo $message['contact_telephone']?></td>
+			<td><?php echo $message['contact_objet']?></td>
+			<td><?php echo $message['contact_message']?></td>
+			</tr>
+		<?php 
 		}?> 
-		
+		</table>		
 <H2> Création du fichier CSV de la liste des messages.</H2>
 		
 		<p><a href="administration_liste_contenu.php">Retour</a>
