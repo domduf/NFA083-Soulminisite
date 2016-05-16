@@ -2,18 +2,19 @@ alert( ' Info --->  Javascript localisation ' ); // histoire de voir si le lien 
 
 // La géolocalisation est-elle prise en charge par le navigateur ?
     if(navigator.geolocation)
-    {
+    {	
+    	alert('Votre navigateur prend en charge la géolocalisation.');
         navigator.geolocation.getCurrentPosition(showLocation, errorHandler);
-         alert('Votre navigateur prend en charge la géolocalisation.');
+         
     }
     else
     {
         alert('Votre navigateur ne prend malheureusement pas en charge la géolocalisation.');
     }
     
-   /* function showLocation(position)
+   function showLocation(position)
     {
         alert('Latitude : '+ position.coords.latitude +' - Longitude : '+ position.coords.latitude);
     }
-    */
+    
 

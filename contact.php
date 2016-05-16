@@ -49,10 +49,27 @@
 <!-- ===================== MENU ===================== -->
 <?php include("includes/menu.php"); ?>
 
-  <!-- =========================== Formulaire ICI ============================ -->
+  <!-- =========================== Resultat ici ========================= -->
 <div>
 
-
+<?php 	$nom=htmlentities($_POST['nom']);
+		echo ($nom. strlen($nom));
+		 if(strlen($nom)<=50) {
+								echo('OK');
+								}
+		$prenom=htmlentities($_POST['prenom']);
+		echo ($prenom);
+		$monMail=htmlentities($_POST['monMail']);
+		echo ($monMail);
+		$monTel=htmlentities($_POST['monTel']);
+		echo ($monTel);
+		$choix=htmlentities($_POST['CHOIX']);
+		echo ($choix);
+		$message=htmlentities($_POST['rem']);
+		echo ($message);
+		
+		
+		?>
 
 </div>
 
