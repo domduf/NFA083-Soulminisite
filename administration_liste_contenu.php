@@ -49,7 +49,8 @@
   	<?php ?>
   	
   	<?php /*données à transmettre pour la connection à la bd */
-  	$login=htmlentities($_POST ['user-name'],ENT_QUOTES); $mdp=$_POST ['user-passwd']; 
+  	$login=htmlentities($_POST ['user-name'],ENT_QUOTES); 
+  	$mdp=htmlentities($_POST ['user-passwd'],ENT_QUOTES); 
 
   	
   	
