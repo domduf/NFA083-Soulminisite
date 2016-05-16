@@ -53,7 +53,7 @@
 <div>
 
 <!-- Début du FORMULAIRE -->
-	<form name="preInscription"  method="POST" action="enregistrementRenseignement.php" onsubmit="return valider()" >
+	<form name="preInscription"  method="POST" action="contact.php" onsubmit="return valider()" >
 	
 	
 		<!-- retour du script date.js -->
