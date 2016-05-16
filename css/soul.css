@@ -80,7 +80,7 @@ border-collapse: collapse;
 
 #tableau_messages td, #tableau_messages th  /* Mettre une bordure sur les td ET les th */
 {
-border: 1px solid white;
+border: 1px solid #FFDB8C;
 }
 
 #TitreSoul {
