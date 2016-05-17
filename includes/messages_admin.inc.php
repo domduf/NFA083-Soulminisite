@@ -34,5 +34,6 @@
 		</table>		
 <H2> Création du fichier CSV de la liste des messages.</H2>
 		
-		<p><a href="administration_liste_contenu.php">Retour</a>
+		
+		<p><a href="administration_liste_contenu.php"><img src="./images/boutonRetour.png"></a><p>
 			

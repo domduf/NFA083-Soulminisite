@@ -81,12 +81,12 @@
   			<form name="formdeConnect" method="POST" action="./administration_deconnection.inc.php">
   			<table> 
   				<tr>
-      				<th>Retourner sur </th>
-      				<td><a href="administration_liste_contenu.php">le menu d'administration ?</a></td>
+      				
+      				<td><a href="administration_liste_contenu.php"><img src="./images/boutonRetour.png"></a> à la liste d'administration</td>
       			</tr>
       			<tr>
-        			<th>Vous déconnecter</th>
-        			<td><input type="submit" name="soumission" id="soumission" value="Soumettre" /></td>
+        			
+        			<td><input type="submit" name="soumission" id="soumission" value="Vous déconnecter" /></td>
       			</tr>
 	
   			</table>

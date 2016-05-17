@@ -99,8 +99,9 @@
 
 	else {	?>
 	<span>
-		<H2>Désolé <?php echo ($_SESSION['login']);?>, mot de passe et/ou login incorrect...</H2>
-		<p>Retour au formulaire de connection <a href="connection_back_office.php"><img src="./images/boutonRetour.png"></a></p>
+		<H2>Désolé <?php echo ($_SESSION['login']);?>, mot de passe et/ou login incorrect...
+		<a href="connection_back_office.php"><img src="./images/boutonRetour.png"></a></H2>
+		
 	</span>
 		
 	<?php /* destruction de la session */

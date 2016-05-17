@@ -61,7 +61,8 @@
 		echo ($prenom);
 		$monMail=htmlentities($_POST['monMail']);
 		echo ($monMail);
-		$monTel=htmlentities($_POST['monTel']);
+		/* mise au format string du no de télephone, afin de récuperer l'éventuel 0 du début  */
+		$monTel= htmlentities((string)$_POST['monTel']);
 		echo ($monTel);
 		$choix=htmlentities($_POST['CHOIX']);
 		echo ($choix);

@@ -45,7 +45,7 @@
 	<?php include("includes/menu.php"); ?>
 <!-- ================================================ -->
 
-  		<span id="administration">
+  		<section id="administration">
 
   	
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
@@ -63,7 +63,8 @@
   	
   	
   	if ($_SESSION['choix_administration'] == 'musiciens'){
-  		echo ('musiciens mon gars');
+  	
+  		include("includes/musiciens_admin.inc.php");
   	
   	}
   	
@@ -75,8 +76,9 @@
   	}
   	
   	else { ?>
-  	
-  	<H2> <a href ="./connection_back_office.php">Connectez-vous.</a> </H2>
+  	<H2>Vous n'êtes plus connectés.</H2>
+  	<p><a href="connection_back_office.php"><img src="./images/boutonRetour.png"></a><p>
+  	 
   	 
   <?php	}
   	
@@ -84,7 +86,7 @@
   
 ?>
 
-		</span>
+		</section>
 </section>
 
 
