@@ -21,20 +21,20 @@
 
 <!-- ===================== TITRE ===================== -->
 <header id="TitreSoul">
-  <section>
-    <p><?php include("./includes/bouton_connect.inc.php"); ?>  </p>
-  </section>
-  <section id="Titre" >
-  
-    <H1>Contact<span class="cachee">Soul Latitude</span></H1>
-  </section>
+  	<section>
+    	<p><?php include("./includes/bouton_connect.inc.php"); ?>  </p>
+  	</section>
+  	<section id="Titre" >
+    	<H1>Contact<span class="cachee">Soul Latitude</span></H1>
+  	</section>
 
 <!-- ===================== CONTACTS ===================== -->
-  <section id="contactsTitre">
-    <H2>Contacts</H2>
-    <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/"><img src="./images/facebook.ico" width="20%"/></a> Soul Latitude</p>
-    <p>Mobile: 06 72 27 66 00</p>
-  </section>
+	<section id="contactsTitre">
+    	<H2>Contacts</H2>
+    	<p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/">
+    		<img src="./images/facebook.ico" width="20%"/></a> Soul Latitude</p>
+    	<p>Mobile: 06 72 27 66 00</p>
+  	</section>
 </header>
 <!-- ======================================================= -->
 <!-- ======================================================= -->
@@ -46,13 +46,13 @@
 <!-- ===================== VISUEL ===================== -->
 
 <section id="centre">
-<!-- ===================== MENU ===================== -->
-<?php include("includes/menu.php"); ?>
+	<!-- ===================== MENU ===================== -->
+	<?php include("includes/menu.php"); ?>
 
-  <!-- =========================== Resultat ici ========================= -->
-<div>
+  	<!-- =========================== Resultat ici ========================= -->
+	<div>
 
-<?php 	$nom=htmlentities($_POST['nom']);
+	<?php 	$nom=htmlentities($_POST['nom']);
 		echo ($nom. strlen($nom));
 		 if(strlen($nom)<=50) {
 								echo('OK');
@@ -70,13 +70,27 @@
 		
 		
 		?>
+		
+	<!-- ================ Connection bdd via PDO ================ -->
+<?php include("includes/connection.php"); ?>	
 
-</div>
+
+		<?php /* requete d'insertion préparée du message dans la table */
+		$sqlInsertionMessage= 
+		"INSERT INTO contact (contact_nom, contact_prenom, contact_email, contact_telephone, contact_objet, contact_message)
+				VALUES (?,?,?,?,?,?)";
+		/* insertion via pdo */	
+		$stmt=$pdo->prepare($sqlInsertionMessage);
+		$nouveau_message=array($nom,$prenom,$monMail,$monTel,$choix,$message);
+		$stmt->execute($nouveau_message);
+		
+		
+		?>
+
+	</div>
 
 </section>
 
-<!-- ======================================================= -->
-<!-- ======================================================= -->
 
 <!-- ===================== BAS DE PAGE  ===================== -->
 <?php include("includes/basDePage.php"); ?>
