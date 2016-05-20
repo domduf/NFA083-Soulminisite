@@ -78,7 +78,7 @@
   		<span id="administration">
   			<H2 ><?php echo $_SESSION['login'];?>, vous êtes connecté,</br> que voulez vous faire ?</H2>
 
-  			<form name="formdeConnect" method="POST" action="./administration_deconnection.inc.php">
+  			<form name="formdeConnect" method="POST" action="./administration_deconnection.php">
   			<table> 
   				<tr>
       				

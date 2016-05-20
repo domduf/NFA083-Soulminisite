@@ -22,7 +22,7 @@
 <!-- ===================== TITRE ===================== -->
 <header id="TitreSoul">
   	<section>
-    	<p><?php include("./includes/bouton_connect.inc.php"); ?>  </p>
+    	<?php include("./includes/bouton_connect.inc.php"); ?>
   	</section>
   	<section id="Titre" >
     	<H1>Contact<span class="cachee">Soul Latitude</span></H1>

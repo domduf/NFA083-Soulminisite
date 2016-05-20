@@ -22,7 +22,7 @@
 <!-- ===================== TITRE ===================== -->
 <header id="TitreSoul">
   <section>
-    <p><?php include("./includes/bouton_connect.inc.php"); ?>  </p>
+    <?php include("./includes/bouton_connect.inc.php"); ?> 
   </section>
   <section id="Titre" >
   
@@ -32,7 +32,8 @@
 <!-- ===================== CONTACTS ===================== -->
   <section id="contactsTitre">
     <H2>Contacts</H2>
-    <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/"><img src="./images/facebook.ico" width="20%"/></a> Soul Latitude</p>
+    <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/">
+		<img src="./images/facebook.ico" width="20%"/></a> Soul Latitude</p>
     <p>Mobile: 06 72 27 66 00</p>
   </section>
 </header>
@@ -87,7 +88,7 @@
     
     <INPUT TYPE="radio" NAME="CHOIX" VALUE="contact" checked>contact<BR> 
 <INPUT TYPE="radio" NAME="CHOIX" VALUE="information">information<BR> 
-<INPUT TYPE="radio" NAME="CHOIX" VALUE="amelioration">amelioration<BR> 
+<INPUT TYPE="radio" NAME="CHOIX" VALUE="amelioration">suggestion d'amélioration<BR> 
    
     <label for="Remarques"><span id="errRem"></span></label><br/> 
     <textarea onblur="remFunc()" placeholder="(merci d'éviter les caractères spéciaux)" name="rem" id="rem"></textarea>
