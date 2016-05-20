@@ -63,7 +63,11 @@
 
 		echo('OK pour le Nom');
 		$prenom=htmlentities($_POST['prenom']);
-		echo ($prenom);
+
+		require "./includes/securit_donnees.inc.php";
+		$prenom2=securite_bdd($_POST['prenom']);
+		
+		echo ('***** htmlentities: '.$prenom.'***** fonction: '.$prenom2);
 		$monMail=htmlentities($_POST['monMail']);
 		echo ($monMail);
 		/* mise au format string du no de télephone, afin de récuperer l'éventuel 0 du début  */
