@@ -46,40 +46,40 @@
 <!-- ===================== VISUEL ===================== -->
 
 <section id="centre">
-<!-- ===================== MENU ===================== -->
-<?php include("includes/menu.php"); ?>
+	<!-- ===================== MENU ===================== -->
+	<?php include("includes/menu.php"); ?>
 
-  <!-- =========================== Formulaire ICI ============================ -->
-<div>
+  	<!-- =========================== Formulaire ICI ============================ -->
+	<div>
 
-<!-- Début du FORMULAIRE -->
-	<form name="preInscription"  method="POST" action="contact.php" onsubmit="return valider()" >
+	<!-- Début du FORMULAIRE -->
+		<form name="preInscription"  method="POST" action="contact.php" onsubmit="return valider()" >
 	
 	
 		<!-- retour du script date.js -->
 		<p id="datedujour" name="datedujour"></p> 
 	
 	
-	<p>
+		
 	<div>
-    <fieldset id="Champscoordonnee" class="Champscoordonnee" ><legend>Vos coordonnées</legend>
+    	<fieldset id="Champscoordonnee" class="Champscoordonnee" ><legend>Vos coordonnées</legend>
     
     
     
     
-    <label for="nom">NOM*<span id="errNom"></span> :</label>
-    <input  onblur="nomFunc()"   type="text" name="nom" id="nom"/><br/>
+    	<label for="nom">NOM*<span id="errNom"></span> :</label>
+    	<input  onblur="nomFunc()"  maxlength="50"  type="text" name="nom" id="nom"/><br/>
     
-    <label for="prenom">Prénom*<span id="errPrenom"></span>:</label>
-    <input onblur="prenomFunc()" type="text" name="prenom" id="prenom"/><br/>
+    	<label for="prenom">Prénom*<span id="errPrenom"></span>:</label>
+    	<input onblur="prenomFunc()" maxlength="50" type="text" name="prenom" id="prenom"/><br/>
     
-    <label for="monMail">Email*<span id="errMail"></span>:</label>
-    <input onblur="emailFunc()"  type="text" name="monMail" id="monMail"/><br/>
+   		<label for="monMail">Email*<span id="errMail"></span>:</label>
+    	<input onblur="emailFunc()"  type="email" name="monMail" id="monMail"/><br/>
 	
-	<label for="monTel">N° de tel portable*:<span id="errTel"></span></label>
-	<input onblur="telFunc()" type="tel" name="monTel" id="monTel" /><br/>
+		<label for="monTel">N° de tel portable*:<span id="errTel"></span></label>
+		<input onblur="telFunc()" type="tel" name="monTel" id="monTel" /><br/>
 	
-    <div> * Champ obligatoires.</div>
+    	<div> * Champ obligatoires.</div>
     </fieldset>
     <p>   </p>
     

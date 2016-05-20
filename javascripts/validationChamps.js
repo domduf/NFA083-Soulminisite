@@ -36,7 +36,7 @@ function nomFunc() {
   else if ($regexCaracteresSpeciaux){
        //alert ('erreur caracteres speciaux');
        $erreur.style.color= "red";
-       $erreur.innerHTML= (' pas de caract. spéciaux SVP');  
+       $erreur.innerHTML= (' pas de caract. spéciaux SVP, pour les noms composés, utilisez le \_ du 8');  
        document.preInscription.nom.value=""; 
        }
        
