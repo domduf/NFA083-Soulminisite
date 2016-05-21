@@ -62,20 +62,20 @@
 		{ /* test de la longueur du nom <=50 caractères */
 
 		echo('OK pour le Nom');
-		$prenom=htmlentities($_POST['prenom']);
-
 		require "./includes/securit_donnees.inc.php";
-		$prenom2=securite_bdd($_POST['prenom']);
-		
-		echo ('***** htmlentities: '.$prenom.'***** fonction: '.$prenom2);
-		$monMail=htmlentities($_POST['monMail']);
+
+		/* securite par fonction ET htmlentities */
+		$prenom=securite_bdd($_POST['prenom']);
+
+		echo ('****** htmlentities+fonction'.$prenom);
+		$monMail=securite_bdd($_POST['monMail']);
 		echo ($monMail);
 		/* mise au format string du no de télephone, afin de récuperer l'éventuel 0 du début  */
 		$monTel= htmlentities((string)$_POST['monTel']);
 		echo ($monTel);
-		$choix=htmlentities($_POST['CHOIX']);
+		$choix=securite_bdd($_POST['CHOIX']);
 		echo ($choix);
-		$message=htmlentities($_POST['rem']);
+		$message=securite_bdd($_POST['rem']);
 		echo ($message);
 		?>
 		
