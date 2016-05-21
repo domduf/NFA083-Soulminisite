@@ -54,33 +54,41 @@
   	<!-- =========================== Resultat ici ========================= -->
 	<div>
 
-	<?php 	$nom=htmlentities($_POST['nom']);
-		
+	<?php 	
 
-	if(strlen($nom)<=50) 
+	/* si les données du formulaire ne sont pas déjà entrées en BD */
+	if( !isset($_SESSION['formulaire_entreeBD']) || $_SESSION['formulaire_entreeBD']== 0 ) 
 		
-		{ /* test de la longueur du nom <=50 caractères */
-
-		echo('OK pour le Nom');
-		require "./includes/securit_donnees.inc.php";
+		{ 
+		/* mise à 1 de l'indicateur d'entrée des données du formulaire en BD */
+		$_SESSION['formulaire_entreeBD']=1;
 
 		/* securite par fonction ET htmlentities */
+		require "./includes/securit_donnees.inc.php";
+		$nom=securite_bdd($_POST['nom']);
 		$prenom=securite_bdd($_POST['prenom']);
-
-		echo ('****** htmlentities+fonction'.$prenom);
 		$monMail=securite_bdd($_POST['monMail']);
-		echo ($monMail);
 		/* mise au format string du no de télephone, afin de récuperer l'éventuel 0 du début  */
 		$monTel= htmlentities((string)$_POST['monTel']);
-		echo ($monTel);
 		$choix=securite_bdd($_POST['CHOIX']);
+		$message=securite_bdd($_POST['rem']);	
+		
+		echo($nom);
+
+		echo ($prenom);
+		
+		echo ($monMail);
+
+		
+		echo ($monTel);
+		
 		echo ($choix);
-		$message=securite_bdd($_POST['rem']);
+		
 		echo ($message);
 		?>
 		
-	<!-- ================ Connection bdd via PDO ================ -->
-	<?php include("includes/connection.php"); ?>	
+		<!-- ================ Connection bdd via PDO ================ -->
+		<?php include("includes/connection.php"); ?>	
 
 
 		<?php 
@@ -95,15 +103,22 @@
 		$stmt=$pdo->prepare($sqlInsertionMessage);
 		$nouveau_message=array($nom,$prenom,$monMail,$monTel,$choix,$message);
 		$stmt->execute($nouveau_message);
+
+
 		}
+		
 
-		else {?>
-		<p>
-		<?php echo('Le champ \'Nom\' contient beaucoup trop de caractères...('.strlen($nom).') ne seriez-vous pas en train de fomenter quelque chose...');?>
-		</p>
-		<p><a href="formulaireRenseignement.php"><img src="./images/boutonRetour.png"></a> au formulaire de contact.</p>
+		/* si les données du formulaire  sont pas déjà entrées en BD */
+	else {?>
+			<p>
+			<?php 
 
-		<?php
+				echo('Vous devez remplir un autre formulaire, celui ci est déjà enregistré en base de données, merci.');?>
+			</p>
+
+			<p><a href="formulaireRenseignement.php"><img src="./images/boutonRetour.png"></a> au formulaire de contact.</p>
+
+			<?php
 		}
 		?>
 

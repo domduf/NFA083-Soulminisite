@@ -8,10 +8,10 @@
 		}
 		// Pour tous les autres types
 		else
-		{
+		{	
+			$string = htmlentities($string,ENT_QUOTES); /* rajouté par domduf, une pierre deux coups */
 			$string = mysql_real_escape_string($string);
 			$string = addcslashes($string, '%_');
-			$string = htmlentities($string,ENT_QUOTES); /* rajouté par domduf, une pierre deux coups */
 		}
 		
 		return $string;

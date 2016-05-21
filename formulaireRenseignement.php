@@ -53,7 +53,10 @@
   	<!-- =========================== Formulaire ICI ============================ -->
 	<div>
 
-	<!-- Début du FORMULAIRE -->
+	 <?php  /*mise à 0 de l'indicateur de remplissage formulaire */
+		$_SESSION['formulaire_entreeBD']="0"; ?>
+	
+		<!-- Début du FORMULAIRE -->
 		<form name="preInscription"  method="POST" action="contact.php" onsubmit="return valider()" >
 	
 	
