@@ -49,6 +49,7 @@
 
   	
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
+  	 echo ('log de session: '.$_SESSION['login']); /*test*/
   	
  if ( isset($_SESSION['login'])) {
   	
@@ -57,7 +58,7 @@
   	
   	if ($_SESSION['choix_administration'] == 'messages') {
   		
-  		include("includes/messages_admin.inc.php");
+  		include("./includes/messages_admin.inc.php");
   	
   	}
   	
