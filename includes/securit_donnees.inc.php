@@ -10,7 +10,7 @@
 		else
 		{	
 			$string = htmlentities($string,ENT_QUOTES); /* rajouté par domduf, une pierre deux coups */
-			$string = mysql_real_escape_string($string);
+			/* $string = mysql_real_escape_string($string);  obsolete*/
 			$string = addcslashes($string, '%_');
 		}
 		
