@@ -2,7 +2,7 @@
 <html>
 
 <!-- ================ Connection bdd via PDO ================ -->
-<?php include("includes/connection.php"); ?>
+<?php include("./includes/connection.php"); ?>
 
 <!-- ======================================================= -->
 <head>
