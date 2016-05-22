@@ -50,7 +50,7 @@
   	
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
   	
- if (isset ($_SESSION['login'])) {
+ if ( isset($_SESSION['login'])) {
   	
   	$_SESSION['choix_administration']=$_POST ['rad-1'];
   	
