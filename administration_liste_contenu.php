@@ -68,7 +68,7 @@
 	/* test de login et mdp */
 	if ($administrateur = $administrateurs->fetch()) {
 	
-  			/* echo $_SESSION['login'] test*/?>
+  			 echo ('log de session: '.$_SESSION['login']); /*test*/?>
   
     <span id="administration"> 
 
