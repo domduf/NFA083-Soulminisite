@@ -2,7 +2,7 @@
 <html>
 
 <!-- ================ Connection bdd via PDO ================ -->
-<?php include("includes/connection.php"); ?>
+<?php include("./includes/connection.php"); ?>
 
 <!-- ======================================================= -->
 <head>
@@ -49,15 +49,16 @@
 
   	
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
+  	 echo ('log de session: '.$_SESSION['login']); /*test*/
   	
- if (isset ($_SESSION['login'])) {
+ if ( isset($_SESSION['login'])) {
   	
   	$_SESSION['choix_administration']=$_POST ['rad-1'];
   	
   	
   	if ($_SESSION['choix_administration'] == 'messages') {
   		
-  		include("includes/messages_admin.inc.php");
+  		include("./includes/messages_admin.inc.php");
   	
   	}
   	

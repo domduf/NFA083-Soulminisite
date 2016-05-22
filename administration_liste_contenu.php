@@ -2,7 +2,7 @@
 <html>
 
 <!-- ================ Connection bdd via PDO ================ -->
-<?php include("includes/connection.php"); ?>
+<?php include("./includes/connection.php"); ?>
 
 <!-- ======================================================= -->
 <head>
@@ -68,7 +68,7 @@
 	/* test de login et mdp */
 	if ($administrateur = $administrateurs->fetch()) {
 	
-  			/* echo $_SESSION['login'] test*/?>
+  			 echo ('log de session: '.$_SESSION['login']); /*test*/?>
   
     <span id="administration"> 
 
