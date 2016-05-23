@@ -104,7 +104,18 @@
 		$nouveau_message=array($nom,$prenom,$monMail,$monTel,$choix,$message);
 		$stmt->execute($nouveau_message);
 
-
+		/* affichage du message de l'heure d'envoi */
+		?>
+		<p>
+		<?php 
+		$date_enregistrement_message = date('d/m/Y');
+		$heure_enregistrement_message = date('H/i/s');
+		echo ('Votre message a été enregistré en base de donnée le '.date('d/m/Y').' à '.date('H').'h'.date('i').'min'.date('s').'</br>');
+		echo ($date_enregistrement_message.' '.$heure_enregistrement_message);
+		?>
+		
+		</p>
+		<?php 
 		}
 		
 
