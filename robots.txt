@@ -1,2 +1,6 @@
 User-agent: *
 Disallow: /docs/
+
+Sitemap: <lien url="http://www.domduf.xyz//docs/sitemap.xml">http://www.domduf.xyz//docs/sitemap.xml</lien>
+
+
