@@ -65,13 +65,13 @@
 
 		/* securite par fonction ET htmlentities */
 		require "./includes/securit_donnees.inc.php";
-		$nom=securite_bdd($_POST['nom']);
-		$prenom=securite_bdd($_POST['prenom']);
-		$monMail=securite_bdd($_POST['monMail']);
+		$nom=htmlentities($_POST['nom']);
+		$prenom=htmlentities($_POST['prenom']);
+		$monMail=htmlentities($_POST['monMail']);
 		/* mise au format string du no de télephone, afin de récuperer l'éventuel 0 du début  */
 		$monTel= htmlentities((string)$_POST['monTel']);
-		$choix=securite_bdd($_POST['CHOIX']);
-		$message=securite_bdd($_POST['rem']);	
+		$choix=htmlentities($_POST['CHOIX']);
+		$message=htmlentities($_POST['rem']);	
 		
 		echo($nom);
 
@@ -104,7 +104,18 @@
 		$nouveau_message=array($nom,$prenom,$monMail,$monTel,$choix,$message);
 		$stmt->execute($nouveau_message);
 
-
+		/* affichage du message de l'heure d'envoi */
+		?>
+		<p>
+		<?php 
+		$date_enregistrement_message = date('d/m/Y');
+		$heure_enregistrement_message = date('H/i/s');
+		echo ('Votre message a été enregistré en base de donnée le '.date('d/m/Y').' à '.date('H').'h'.date('i').'min'.date('s').'</br>');
+		echo ($date_enregistrement_message.' '.$heure_enregistrement_message);
+		?>
+		
+		</p>
+		<?php 
 		}
 		
 
