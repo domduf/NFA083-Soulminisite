@@ -1,6 +1,0 @@
-# Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
-RewriteBase /
-
-#ajout par domduf le 23 mai 2016
-DirectoryIndex www.domduf.xyz/index.php  domduf.xyz/index.php /erreurs/erreur_403.php
-
