@@ -1,5 +1,11 @@
 User-agent: *
+
+Disallow: /includes/
 Disallow: /javascripts/
+Disallow: /entravaux/
+Disallow: /administration_page.php
+Disallow: /connection_back_office.php
+Disallow: /administration_liste_contenu.php
 
 Sitemap: <lien url="http://www.domduf.xyz/docs/sitemap.xml">http://www.domduf.xyz/docs/sitemap.xml</lien>
 
