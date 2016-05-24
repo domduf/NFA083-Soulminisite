@@ -28,6 +28,7 @@
 			<td><?php echo $message['contact_telephone']?></td>
 			<td><?php echo $message['contact_objet']?></td>
 			<td><?php echo $message['contact_message']?></td>
+			<td><?php echo $message['contact_dateTime']?></td>
 			</tr>
 		<?php 
 		}?> 
