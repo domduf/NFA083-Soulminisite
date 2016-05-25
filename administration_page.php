@@ -42,21 +42,31 @@
 
 <section id="centre">
 <!-- ===================== MENU ===================== -->
-	<?php include("includes/menu.php"); ?>
+	<?php /*include("includes/menu.php"); */ ?>
 <!-- ================================================ -->
 
   		<section id="administration">
 
   	
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
-  	 echo ('log de session: '.$_SESSION['login']); /*test*/
+  	 /*echo ('log de session: '.$_SESSION['login']); test*/
   	
  if ( isset($_SESSION['login'])) {
   	
-  	$_SESSION['choix_administration']=$_POST ['rad-1'];
+
+	if ( $_SESSION['vientDeAdminContenu']==1 ){
+  	$_SESSION['choix_administration']=$_POST ['rad-1'];}
   	
   	
   	if ($_SESSION['choix_administration'] == 'messages') {
+
+			/*  test de selection ou non de tri */
+		if (!isset ($_POST ['tri_messages'])){
+		$_SESSION ['ordre_messages'] = 'contact_id';
+		}
+			else {
+			$_SESSION ['ordre_messages'] = $_POST ['tri_messages'];
+			}
   		
   		include("./includes/messages_admin.inc.php");
   	

@@ -72,7 +72,8 @@
   
     <span id="administration"> 
 
-		<H2><?php echo 'Bienvenue '.$administrateur['mem_prenom'].'<br> alias '.$login.'.'; ?> </H2>
+		<H2><?php echo 'Bienvenue '.$administrateur['mem_prenom'].'<br> alias '.$login.'.';
+				$_SESSION['vientDeAdminContenu']=1; ?> </H2>
   		 		
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
   		Soyez sûr de ce que vous faites.</p>
@@ -84,7 +85,6 @@
         			<th>Votre choix: ?</th>
         				<td><input type="radio" name="rad-1" id="musiciens" checked="checked" value="musiciens" />gestion de la base des musiciens.<br />
              				<input type="radio" name="rad-1" id="messages" value="messages" />consultation des messages d' internautes.<br />
-             				<input type="radio" name="rad-1"  id="rad3"  value="item3" />fichier csv.<br />
              				<input type="radio" name="rad-1" id="droits"  value="droits" />gestion des droits.</td>
       			</tr>	
       			<tr>
@@ -95,6 +95,7 @@
   		</form>
 	</span>
 	<?php 
+		
 	}
 
 	else {	?>
