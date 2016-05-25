@@ -4,9 +4,13 @@
 
 <H2> Affichage des messages reçus</H2>
 <?php
+	$ordre='contact_email';
+
+
 
 	$sqlmessage = "SELECT 		*
-		FROM 		contact " ;
+		FROM 		contact 
+		ORDER BY $ordre ;" ;
 		
 		$messages= $pdo->query($sqlmessage); ?>
 		
@@ -17,7 +21,8 @@
 			<th>mail</th>
 			<th>tel</th>
 			<th>Objet</th>	
-			<th>Message</th>	
+			<th>Message</th>
+			<th>Date Time</th>
 		</tr>
 		<?php 
 		while ($message = $messages->fetch()) {
