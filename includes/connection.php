@@ -3,7 +3,7 @@
 
 		
 		/* DECLARATION des Variables de connection à la bdd */
-		$dsn="mysql:host=localhost;dbname=soul_5mai;charset=UTF8";
+		$dsn="mysql:host=localhost;dbname=soul_26mai;charset=UTF8";
 		$login = "root";
 		$pass= "";
 		
