@@ -1,5 +1,5 @@
-# fichier pour ignorer les repertoires contenant des images, etc.
+# fichier pour ignorer les repertoires contenant des images, des mdp etc.
 
 sons/
 
-
+connection.php

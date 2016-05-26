@@ -9,7 +9,7 @@
 
 <link rel="icon" href="soullat2.ico" />
 
-<title>Soul Latitude | Agenda </title>
+<title>Soul Latitude | Mentions légales </title>
 <link href="./css/soul.css" rel="stylesheet" type="text/css" />
 </head>
 <!-- ======================================================= -->
@@ -17,15 +17,19 @@
 
 <body>
 
+
+
 <!-- ===================== TITRE ===================== -->
 <header id="TitreSoul">
   <section>
-    <?php include("./includes/bouton_connect.inc.php"); ?>
+	<?php include("./includes/bouton_connect.inc.php"); ?>
   </section>
   <section id="Titre" >
   
-    <H1>Agenda <span class="cachee">Soul Latitude</span></H1>
+    <H1>Mentions Légales <span class="cachee">Soul Latitude</span></H1>
+    
   </section>
+
 <!-- ===================== CONTACTS ===================== -->
   <section id="contactsTitre">
     <H2>Contacts</H2>
@@ -33,6 +37,8 @@
     <p>Mobile: 06 72 27 66 00</p>
   </section>
 </header>
+<!-- ======================================================= -->
+<!-- ======================================================= -->
 
 
 <!-- ===================== VISUEL ===================== -->
@@ -41,18 +47,25 @@
 <!-- ===================== MENU ===================== -->
 <?php include("includes/menu.php"); ?>
 
+<div>
 
-<span>
-<iframe src="https://calendar.google.com/calendar/embed?title=Suivez%20Soul%20Latitude%20!&amp;showNav=0&amp;showCalendars=0&amp;height=350&amp;wkst=2&amp;bgcolor=%23D9AB20&amp;src=fr.french%23holiday%40group.v.calendar.google.com&amp;color=%230F4B38&amp;src=6hsphcjnhmdkfvrmqbs93rkr6c%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Europe%2FParis" style="border:solid 1px #777" width="500" height="350" frameborder="0" scrolling="no"></iframe>
-</span>
+
+<H3>Hery Ratsimbasafy</H3>
+<p>Conception menu, PHP...</p>
+<H3>Dominque Dufour</H3>
+<p>Conception back-office, web-graphisme, Javascript formulaire, base de données... </p>
+<H3>Sandrine</H3>
+<p>dite "Dine"</p>
+<p>Photos, Conception graphique de la plaquette, dont s'est inspiré Dominique</p>
+</div>
 
 
 
 </section>
 <!-- ======================================================= -->
+<!-- ======================================================= -->
 
-
-
+<!-- ===================== BAS DE PAGE  ===================== -->
 <?php include("includes/basDePage.php"); ?>
 </body>
 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<!-- ======================================================= -->
+<head>
+
+<meta charset="UTF-8" lang="fr"/>
+<meta name="Soul Latitude"  content="Groupe musique RythmNBlues dix musiciens concerts live "/>
+
+<link rel="icon" href="soullat2.ico" />
+
+<title>Soul Latitude | Formulaire_renseignement  </title>
+<link href="./css/soul.css" rel="stylesheet" type="text/css" />
+</head>
+<!-- ======================================================= -->
+
+
+<body>
+
+
+
+<!-- ===================== TITRE ===================== -->
+<header id="TitreSoul">
+  <section>
+    <?php include("./includes/bouton_connect.inc.php"); ?> 
+  </section>
+  <section id="Titre" >
+  
+    <H1>Groupe <span class="cachee">Soul Latitude</span></H1>
+  </section>
+
+<!-- ===================== CONTACTS ===================== -->
+  <section id="contactsTitre">
+    <H2>Contacts</H2>
+    <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/">
+		<img src="./images/facebook.ico" width="20%"/></a> Soul Latitude</p>
+    <p>Mobile: 06 72 27 66 00</p>
+  </section>
+</header>
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+
+<section id="accrocheAccueuil">
+    <H3>Vous souhaitez en savoir plus sur notre groupe, recevoir des news, pouvoir nous rencontrer.</H3>
+    <p>Merci de bien vouloir remplir ce formulaire, et nous vous contactons au plus vite. </p>
+</section>
+<!-- ===================== VISUEL ===================== -->
+
+<section id="centre">
+	<!-- ===================== MENU ===================== -->
+	<?php include("includes/menu.php"); ?>
+
+  	<!-- =========================== Formulaire ICI ============================ -->
+	<div>
+
+	 <?php  /*mise à 0 de l'indicateur de remplissage formulaire */
+		$_SESSION['formulaire_entreeBD']="0"; ?>
+	
+		<!-- Début du FORMULAIRE -->
+		<form name="preInscription"  method="POST" action="contact.php" onsubmit="return valider()" >
+	
+	
+		<!-- retour du script date.js -->
+		<p id="datedujour" name="datedujour"></p> 
+	
+	
+		
+	<div>
+    	<fieldset id="Champscoordonnee" class="Champscoordonnee" ><legend>Vos coordonnées</legend>
+    
+    
+    
+    
+    	<label for="nom">NOM*<span id="errNom"></span> :</label>
+    	<input  onblur="nomFunc()"  maxlength="50"  type="text" name="nom" id="nom"/><br/>
+    
+    	<label for="prenom">Prénom*<span id="errPrenom"></span>:</label>
+    	<input onblur="prenomFunc()" maxlength="50" type="text" name="prenom" id="prenom"/><br/>
+    
+   		<label for="monMail">Email*<span id="errMail"></span>:</label>
+    	<input onblur="emailFunc()"  type="email" name="monMail" id="monMail"/><br/>
+	
+		<label for="monTel">N° de tel portable*:<span id="errTel"></span></label>
+		<input onblur="telFunc()" type="tel" name="monTel" id="monTel" /><br/>
+	
+    	<div> * Champ obligatoires.</div>
+    </fieldset>
+    <p>   </p>
+    
+    <fieldset ><legend>Votre message a pour objet:</legend>
+    
+    <INPUT TYPE="radio" NAME="CHOIX" VALUE="contact" checked>contact<BR> 
+<INPUT TYPE="radio" NAME="CHOIX" VALUE="information">information<BR> 
+<INPUT TYPE="radio" NAME="CHOIX" VALUE="amelioration">suggestion d'amélioration<BR> 
+   
+    <label for="Remarques"><span id="errRem"></span></label><br/> 
+    <textarea onblur="remFunc()" placeholder="(merci d'éviter les caractères spéciaux)" name="rem" id="rem"></textarea>
+
+    </fieldset> </div>
+    
+    <br/>
+    
+<br/>
+ 
+     <p>Avant d'envoyer, saurez-vous faire cette terrible addition* (pour un musicien...)<br/>  
+     <label for="kapcharep"><span id="n1"></span> + <span id="n2"> </span> =</label>
+      <input onblur="kapcharepFunc()" type="text"  name="kapcharep" id="kapcharep"  /> <span id="errKapcha"></span><div> * Champ obligatoires.</div></p>
+     
+     <br/>
+    <p><input type="submit" value="Envoyer à notre secretaire" /> ou alors...<input type="reset" value="J'annule tout, désolé." />
+    </p>
+    </form>	
+
+</div>
+
+</section>
+
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+
+<!-- ===================== BAS DE PAGE  ===================== -->
+<?php include("includes/basDePage.php"); ?>
+
+<!-- ============= Appels de scripts JS ================== -->
+<script src='./javascripts/validationChamps.js' type = 'text/javascript' ></script>
+<script src='./javascripts/date.js' type = 'text/javascript' ></script>
+<script src='./javascripts/kapcha.js' type = 'text/javascript' ></script>
+
+</body>
+
+</html>

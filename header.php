@@ -17,21 +17,18 @@
 
 <body>
 
-<header>
-  <section id="bann1" >
-  <p><img src="./images/banniere_1.jpg" width="100%"/>< Soul Latitude</p>
-  </section>
-  <section id="bann2" >
-  <p><img src="./images/banniere_2.jpg" width="100%"/>< Soul Latitude</p>
+<header id="TitreSoul">
+  <section id="banniere" >
+  <p><img src="./images/banniere_1.jpg" width="60%"/>< Soul Latitude</p>
+  <p><img src="./images/banniere_2.jpg" width="60%"/>< Soul Latitude</p>
   </section>
 
 <!-- ===================== logo ===================== -->
   <section id="logo">
     
     <p><img src="./images/logoSoul.png" width="20%"/>< Soul Latitude</p>
-  </section>  
-</header>
-</body>
+    
 
+</body>
 
 </html>

@@ -1,38 +1,28 @@
 /* style du site general */
-
-html {
-  display: flex; flex-direction: column; /* correction bug IE de min-height non appliqué à body */
-}
 body {
-display: flex; /* crée un contexte flex pour ses enfants */
-flex-direction: column; /* affichage vertical */
-min-height: 100vh; /* toute la hauteur du viewport */
-padding: 1em;
 color:#FBC31A;/*#FFDB70*/
 margin:5; /*evite barre defilement*/
 background-color: black;
 background-size:20%;
-background-position:90% 3%;
+background-image: url("../images/logoSoul.png");
+background-position:90% 9%;
 background-attachment:fixed;
 background-repeat:no-repeat;
 font-family : Century Schoolbook L;
 text-align:justify;
 }
 
-
-
 footer a {color:#9C622E;}
 footer a:hover {color:#FED789;}
 
 
-footer {
-margin-left:10%;
+footer {margin-left:10%;
 margin-right:10%;
 background-color:black;
-text-align:center;
+
 font-size:15px;
 color:#FBC31A;
-border-style:double;
+bottom:5px;
 }
 
 
@@ -40,127 +30,70 @@ border-style:double;
 display:none;}
 
 H1 {
-font-size: 40px;
-text-align:center;
-margin-top:-100px;
+font-size: 50px;
 }
 H2 {
 font-size:20px;
 }
+#accrocheAccueuil {
+margin-left:8%;
+margin-right:5%;
+/*margin-top:3%;*/
+margin-bottom:3%;
+background-color:rgba(167, 85, 9, 0.5);/*#4F4424;*/
+border-style:solid;
+border-width:5px;
+border-color:#FFDB8C;
+border-radius:6px;
+padding:20px;
+font-size:15px;
 
+}
 p {
-font-size:13px;
+font-size:14px;
 }
 
-/* mise en page du header */
+/* style de la zone de texte 
+"Vos remarques sur votre choix"
+du formulaire*/
+textarea {
+width : 97% ;
+height : 150px;
+}
+
+/*.Champscoordonnee label {
+display:block;
+margin-left: 2%;
+}*/	
+
+/*alignement des "input" du formulaire */
+.Champscoordonnee  input {
+display:block;
+color :#9F9378;
+margin-left:90px;
+}
+
+table  {
+border-collapse: collapse;
+background :rgba(192,54,67,0.2);
+}
+
+
+#tableau_messages td, #tableau_messages th  /* Mettre une bordure sur les td ET les th */
+{
+border: 1px solid #FFDB8C;
+}
 
 #TitreSoul {
-flex:auto;
-margin-bottom:100px;
+padding:15px;
 display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: space-between;
-align-items:center;
+flex-direction: row-reverse;
+flex-wrap: wrap;
+justify-content: space-around;
 }
-
-#bann1 {
-   width:100%;
-   margin-left:100px;
-   webkit-animation:step1 8s linear 8s infinite alternate;
-	-moz-animation:step1 8s linear 8s infinite alternate;
-			animation:step1 8s linear 8s infinite alternate;
-}
-
-		@-webkit-keyframes step1{ 
-			from {opacity:1;}
-			to {opacity :0;}
-		    }
-		@-moz-keyframes step1{ 
-			from {opacity:1;}
-			to {opacity :0;}
-            }
-            
-#bann2{
-  	width:100%;	
-	margin-left:-500px;
-	-webkit-animation:step2 8s linear 8s infinite alternate;
-	-moz-animation:step2 8s linear 8s infinite alternate;
-			animation:step2 8s linear 8s infinite alternate;
-			}
-@-webkit-keyframes step2{ 
-			from {opacity:0;}
-			to {opacity :1;}
-		    }
-		@-moz-keyframes step2{ 
-			from {opacity:0;}
-			to {opacity :1;}	
-            }
-
-#logo{
-   width:100%;
-    margin-left:50px;
-  
-}
-
-#bouton{
-   -moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	-webkit-box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dbe6c4), color-stop(1, #9ba892));
-	background:-moz-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
-	background:-webkit-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
-	background:-o-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
-	background:-ms-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
-	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
-
-	background-color:#dbe6c4;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #b2b8ad;
-	display:inline-block;
-  text-align:right;
-	cursor:pointer;
-	color:#757d6f;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:8px 35px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ced9bf;
-  
-}
-
-#bouton:hover {
-  
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9ba892), color-stop(1, #dbe6c4));
-	background:-moz-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
-	background:-webkit-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
-	background:-o-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
-	background:-ms-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
-	background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
-
-	background-color:#9ba892;  
-}
-
-#bouton:active {
- 
-	top:1px;
-}
-
-#aside1{
-width:20%;
-border:3px solid;
-border-color: #696969 #204a87 #204a87 #696969 ;
-text-align:center;
-background-color:#FFDB8C;
-color:black;
-float:right;
-}
-
 
 #visuel {
+width:60%;
 max-width:800px;
 max-height:587px;
 min-width:200px;
@@ -177,14 +110,32 @@ min-height:147px;
 padding:10px;
 display: flex;
 justify-content: space-around;
-align-items: center;
+/*align-items: center;*/
 }
 
+#article-musicos {
+max-width:450px;
+max-height:200px;
+min-width:100px;
+min-height:100px;
+}
+
+
+#administration {
+font-size: 20px;
+color :#F18E2F;
+}
 /*===========MENU ===============*/
+
+#posMenu { /* pour remonter tout le menu en haut */
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
 
 #menu ul {
 display:block;
-width:20%;
+width:175px;
 padding:10;
 margin:0;
 list-style-type:none;
@@ -195,7 +146,7 @@ text-align:center;
 list-style-type: none; 
 position: relative;
 display:block;
-width:200px;
+width:175px;
 padding:0;
 background-color:#FFDB8C; 
 border:1px solid;
@@ -207,7 +158,7 @@ border-radius: 5px;
 
 #menu a {
  display:block;
- width:200px;
+ width:175px;
  background-color:#FFDB8C ;
  text-decoration:none;
  text-align:center;
@@ -221,7 +172,7 @@ border-radius: 5px;
 
 #menu ul ul {display:none;
 position: absolute;
-left: 200px;
+left: 175px;
 top: 0px;
 margin: 0px; 
 padding: 0px;
@@ -247,41 +198,4 @@ float:none;
 
 #menu li ul {
 position:absolute;
-}
-
-
-#boiteformulaire {
-  display:flex;
-  flex-direction:column;
-  width:900px;
-  height:600px;
-  
-}
-/* Responsive (fenêtres de moins de 640px) */
-
-@media (max-width: 640px) {
-  .wrapper {
-    flex-direction: column; /* affichage vertical */
-  }
-  nav,
-  aside {
-    width: auto; /* pour écraser la valeur 10em */
-  }
-  nav,
-  aside,
-  #visuel {
-    flex-basis: auto; /* pour écraser la valeur 0, due au flex: 1 */
-  }
-  nav {
-    order: 0; /* nav reprend sa place */
-  }
-  #TitreSoul #bann1 {
-  
-  left:50px;
-  }
-  
-  #TitreSoul #bann2 {
- 
-  left:100px;
-  }
 }

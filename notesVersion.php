@@ -9,7 +9,7 @@
 
 <link rel="icon" href="soullat2.ico" />
 
-<title>Soul Latitude | Agenda </title>
+<title>Soul Latitude | Rythm N'Blues </title>
 <link href="./css/soul.css" rel="stylesheet" type="text/css" />
 </head>
 <!-- ======================================================= -->
@@ -24,35 +24,40 @@
   </section>
   <section id="Titre" >
   
-    <H1>Agenda <span class="cachee">Soul Latitude</span></H1>
+    <H1>Groupe <span class="cachee">Soul Latitude</span></H1>
   </section>
+
 <!-- ===================== CONTACTS ===================== -->
   <section id="contactsTitre">
     <H2>Contacts</H2>
     <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/"><img src="./images/facebook.ico" width="20%"/></a> Soul Latitude</p>
     <p>Mobile: 06 72 27 66 00</p>
   </section>
-</header>
-
+</header>	
 
 <!-- ===================== VISUEL ===================== -->
 
 <section id="centre">
 <!-- ===================== MENU ===================== -->
-<?php include("includes/menu.php"); ?>
+	<?php include("includes/menu.php"); ?>
 
+  	<span>
+  		<H2>Notes de version</H2>
+  		
+  		<p>Wed Apr 6	installation versionning by git</p>
+  		<p>Wed Apr 27	début de mise en place de la maj via ssh et Git sur hebergeur</br>
+  		voir <a href="./docs/publierAvecGitAutomatisation.png">ici la copie d'écran.<a/>
+  	</span> </p>
+  		<p>Sun May 1	simplification bd -> 1er mai</p>
 
-<span>
-<iframe src="https://calendar.google.com/calendar/embed?title=Suivez%20Soul%20Latitude%20!&amp;showNav=0&amp;showCalendars=0&amp;height=350&amp;wkst=2&amp;bgcolor=%23D9AB20&amp;src=fr.french%23holiday%40group.v.calendar.google.com&amp;color=%230F4B38&amp;src=6hsphcjnhmdkfvrmqbs93rkr6c%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Europe%2FParis" style="border:solid 1px #777" width="500" height="350" frameborder="0" scrolling="no"></iframe>
-</span>
 
 
 
 </section>
-<!-- ======================================================= -->
 
 
 
+<!-- ===================== BAS DE PAGE  ===================== -->
 <?php include("includes/basDePage.php"); ?>
 </body>
 
