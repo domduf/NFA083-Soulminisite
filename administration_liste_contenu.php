@@ -1,9 +1,19 @@
-<!DOCTYPE html>
-<html>
+
+<!--  Affichage des données en cookies -->
+   
+  <?php
+  
+  setCookie('login',time()+365*24*3600);
+(isset ($_COOKIE['login'])){echo 'Bienvenue '.$_COOKIE['login'].;}; 
+?> 
+ 
 
 <!-- ================ Connection bdd via PDO ================ -->
 <?php include("./includes/connection.php"); ?>
 
+<!DOCTYPE html>
+
+<html>
 <!-- ======================================================= -->
 <head>
 
@@ -71,7 +81,7 @@
   			 echo ('log de session: '.$_SESSION['login']); /*test*/?>
   
     <span id="administration"> 
-
+    <p><?php if (isset ($_COOKIE['login'])){echo echo 'Bienvenue '.$_COOKIE['login'].;}?><p>
 		<H2><?php echo 'Bienvenue '.$administrateur['mem_prenom'].'<br> alias '.$login.'.'; ?> </H2>
   		 		
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
