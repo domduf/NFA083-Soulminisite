@@ -54,6 +54,7 @@
   	
   	
  	$choixZic=$_POST ['choixZic'];
+ 	$_SESSION['choixZic']=$choixZic;
 
   	$login=$_SESSION['login'];
   	$mdp=$_SESSION['mdp'];
@@ -81,7 +82,7 @@
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
   		Soyez sûr de ce que vous faites.</p>
   		
-  	<form name="modifMembre"  method="POST" action="./inc/modif_membre_validation.inc.php" >
+  	<form name="modifMembre"  method="POST" action="./administration_modif_membre_validation.php" >
   	
   		<table id="tableau_messages">
 			<tr>
@@ -211,7 +212,7 @@
 			</tr>						
   		</table>
   		
-  		
+  		<input type="submit" name="submit" value="Modifier je suis sûr de tout..." />
   		
   	</form>
   		
