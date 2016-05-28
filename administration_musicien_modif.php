@@ -79,7 +79,8 @@
 		<?php echo (' id choix membre: '. $choixZic); ?>
 		<H2><?php echo ('Modification de '.$membre['mem_prenom'].' '.$membre['mem_nom'].' (id '.$membre['mem_id'].')');?><br> 
 		
-			<?php	$_SESSION['vientDeAdminContenu']=1; ?> </H2>
+			<?php	$_SESSION['vientDeAdminContenu']=1;
+					$_SESSION ['flag_requete_update_membre']=0 ?> </H2>
   		 		
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
   		Soyez sûr de ce que vous faites.</p>

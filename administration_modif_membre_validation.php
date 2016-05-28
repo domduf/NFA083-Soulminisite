@@ -53,6 +53,8 @@
   	
  if ( isset($_SESSION['login'])) {
  
+ 		
+ 
  		/* récup des variables */
  		$choixZic=$_SESSION['choixZic'];
  		echo $choixZic;
@@ -85,10 +87,10 @@
 
 
 
-
-
-
-
+	/* flag qui évite d'actualiser la requete sur la même page */
+	
+	if ($_SESSION ['flag_requete_update_membre']==0) {
+	
 	/*--------INSERTION EN BD -----------------*/
 	
 	$sql_update_membre = "	UPDATE 	membre
@@ -98,8 +100,17 @@
   	/* requete préparée */
   	$preparee = $pdo->prepare($sql_update_membre);
   	$nouvelles_valeurs= array ($mem_description_musico, $mem_nom, $mem_prenom, $mem_sexe, $mem_article, $choixZic);
+	
+	/* execution de la requete préparée plus haut */
 	$preparee->execute ($nouvelles_valeurs);
 	
+	/* mise à 1 du flag  */
+	$_SESSION ['flag_requete_update_membre']= 1;
+	
+	}
+	else
+			{
+			echo ('Votre requète a déjà été enregistrée...inutile d\'insister');}
 
 
 
