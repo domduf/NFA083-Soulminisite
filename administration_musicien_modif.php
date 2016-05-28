@@ -54,7 +54,7 @@
   	
   	
  	$choixZic=$_POST ['choixZic'];
- 	echo (' id choix membre: '. $choixZic);
+
   	$login=$_SESSION['login'];
   	$mdp=$_SESSION['mdp'];
   	
@@ -73,17 +73,150 @@
   			 /*echo ('membre: '.$membre['mem_prenom']); test*/?>
   
     <span id="administration"> 
-
-		<H2><?php echo ('Bienvenue '.$membre['mem_prenom']);?><br> 
+		<?php echo (' id choix membre: '. $choixZic); ?>
+		<H2><?php echo ('Modification de '.$membre['mem_prenom'].' '.$membre['mem_nom'].' (id '.$membre['mem_id'].')');?><br> 
 		
 			<?php	$_SESSION['vientDeAdminContenu']=1; ?> </H2>
   		 		
   		<p>Attention, toute modification influe sur le contenu de la base de donnée...</br>
   		Soyez sûr de ce que vous faites.</p>
   		
+  	<form name="modifMembre"  method="POST" action="./inc/modif_membre_validation.inc.php" >
+  	
+  		<table id="tableau_messages">
+			<tr>
+				
+				<th>mem_id</th>
+				<td><?php echo ($membre['mem_id']); ?></td>	
+			</tr>
+			
+			<tr>
+				<th>mem_login</th>
+				<td><?php echo ($membre['mem_login']); ?></td>
+			</tr>
+			
+			<tr>
+				<th>mem_mdp</th>
+				<td>
+				<?php /* ATTENTION au mot de passe... */
+				if ($login==$membre['mem_login']){
+					echo ($membre['mem_mdp']); 
+					}
+				else {
+					echo ('Vous n\'êtes pas cette personne...');
+					}?>
+				</td>
+			</tr>			
+			<tr>
+				<th>mem_persona</th>
+				<td><?php echo ($membre['mem_persona']); ?></td>
+			</tr>
+			<tr>
+				<th>mem_activite</th>
+				<td><?php echo ($membre['mem_activite']); ?></td>
+			</tr>
+						
+			<tr>
+				<th>mem_description_musico</th>
+				<td>
+				<input type="text" 
+		    name="mem_description_musico" value="<?php echo ($membre['mem_description_musico']); ?>" 
+		    id="mem_description_musico"/>
+				
+				
+				</td>
+			</tr>
+						
+			<tr>
+				<th>mem_civilite</th>
+				<td><?php echo ($membre['mem_civilite']); ?></td>
+				
+				
+				
+			</tr>			
+			<tr>
+				<th>mem_nom</th>
+				<td><?php echo ($membre['mem_nom']); ?></td>
+			</tr>			
+			<tr>
+				<th>mem_prenom</th>
+				<td><?php echo ($membre['mem_prenom']); ?></td>
+			</tr>			
+			<tr>
+				<th>mem_date_naiss</th>
+				<td><?php echo ($membre['mem_date_naiss']); ?></td>
+			</tr>			
+			<tr>
+				<th>mem_sexe</th>
+				<td>
+				<select name="mem_sexe" id="mem_sexe">
+					<?php 
+					
+					if ($membre['mem_sexe']=='masculin'){ ?>
+					
+					<option value="masculin" selected="selected" >masculin</option>
+            		<option value="feminin">feminin</option> 
+            		
+					<?php } 
+					
+					else { ?>
+            		<option value="masculin">masculin</option>
+            		<option value="feminin" selected="selected">feminin</option>					
+					<?php } ?>	
+
+         		</select>
+				
+				
+				</td>
+			</tr>			
+			<tr>
+				<th>mem_centre_interet</th>
+				<td><?php echo ($membre['mem_centre_interet']); ?></td>
+			</tr>			
+			<tr>
+				<th>mem_article</th>
+				<td>
+					<textarea  
+					name="mem_article" id="mem_article"><?php echo ($membre['mem_article']); ?></textarea>
+				</td>
+			</tr>			
+			<tr>
+				<th>mem_lien_photo</th>
+				<td><?php echo ($membre['mem_lien_photo']); ?></td>
+			</tr>			
+			<tr>
+				<th>mem_membre_bureau</th>
+				<td><?php echo ($membre['mem_membre_bureau']); ?></td>
+			</tr>			
+			<tr>
+				<th>mem_email</th>
+				<td><?php echo ($membre['mem_email']); ?></td>
+			</tr>			
+			<tr>
+				<th>mem_adres_num</th>
+				<td><?php echo ($membre['mem_adres_num']); ?></td>
+			</tr>			
+			
+			<tr>
+				<th>mem_adres_rue</th>
+				<td><?php echo ($membre['mem_adres_rue']); ?></td>
+			</tr>			
+			<tr>
+				<th>mem_adres_cp</th>
+				<td><?php echo ($membre['mem_adres_cp']); ?></td>
+			</tr>				
+			<tr>
+				<th>mem_adres_ville</th>
+				<td><?php echo ($membre['mem_adres_ville']); ?></td>
+			</tr>						
+  		</table>
   		
+  		
+  		
+  	</form>
   		
 	</span>
+	
 	<?php 
 		
 	}
