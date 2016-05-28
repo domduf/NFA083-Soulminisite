@@ -51,7 +51,9 @@
   <!-- ===============Requete SQL selection du membre ==================== -->
 
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
-  	
+  	 
+  	 
+  	if ( isset($_SESSION['login'])) {
   	
  	$choixZic=$_POST ['choixZic'];
  	$_SESSION['choixZic']=$choixZic;
@@ -101,13 +103,14 @@
 				<td>
 				<?php /* ATTENTION au mot de passe... */
 				if ($login==$membre['mem_login']){
-					echo ($membre['mem_mdp']); 
+					echo ($membre['mem_mdp']);
 					}
 				else {
 					echo ('Vous n\'êtes pas cette personne...');
 					}?>
 				</td>
-			</tr>			
+			</tr>
+						
 			<tr>
 				<th>mem_persona</th>
 				<td><?php echo ($membre['mem_persona']); ?></td>
@@ -123,8 +126,6 @@
 				<input type="text" 
 		    name="mem_description_musico" value="<?php echo ($membre['mem_description_musico']); ?>" 
 		    id="mem_description_musico"/>
-				
-				
 				</td>
 			</tr>
 						
@@ -137,12 +138,22 @@
 			</tr>			
 			<tr>
 				<th>mem_nom</th>
-				<td><?php echo ($membre['mem_nom']); ?></td>
-			</tr>			
+				<td>
+				<input type="text" 
+		    name="mem_nom" value="<?php echo ($membre['mem_nom']); ?>" 
+		    id="mem_nom"/>
+				</td>
+			</tr>	
+					
 			<tr>
 				<th>mem_prenom</th>
-				<td><?php echo ($membre['mem_prenom']); ?></td>
-			</tr>			
+				<td>
+				<input type="text" 
+		    name="mem_prenom" value="<?php echo ($membre['mem_prenom']); ?>" 
+		    id="mem_prenom"/>
+				</td>
+			</tr>
+						
 			<tr>
 				<th>mem_date_naiss</th>
 				<td><?php echo ($membre['mem_date_naiss']); ?></td>
@@ -220,6 +231,8 @@
 	
 	<?php 
 		
+	}
+	
 	}
 
 	else {	?>

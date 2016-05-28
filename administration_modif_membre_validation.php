@@ -55,20 +55,31 @@
  
  		/* récup des variables */
  		$choixZic=$_SESSION['choixZic'];
- 		$mem_description_musico = $_POST ['mem_description_musico'];
- 		
  		echo $choixZic;
 		?></br><?php
 		
-		
+		$mem_description_musico = $_POST ['mem_description_musico'];
  		echo $mem_description_musico;
 		?></br><?php
+		
+		$mem_nom = $_POST ['mem_nom'];
+ 		echo $mem_nom;
+		?></br><?php
+		
+		$mem_prenom = $_POST ['mem_prenom'];
+ 		echo $mem_prenom;
+		?></br><?php
+		
  		
  		$mem_sexe = $_POST ['mem_sexe'];
  		echo $mem_sexe;
  
  		?></br><?php
 
+		$mem_article = $_POST ['mem_article'];
+ 		echo $mem_article;
+ 
+ 		?></br><?php
 
 
 
@@ -81,14 +92,14 @@
 	/*--------INSERTION EN BD -----------------*/
 	
 	$sql_update_membre = "	UPDATE 	membre
-							SET mem_sexe = ?
+							SET mem_description_musico = ?, mem_nom = ?, mem_prenom = ?, mem_sexe = ?, mem_article = ?
 							WHERE mem_id = ? " ;
 			
   	/* requete préparée */
   	$preparee = $pdo->prepare($sql_update_membre);
-  	$nouvelles_valeurs= array ($mem_sexe , $choixZic);
+  	$nouvelles_valeurs= array ($mem_description_musico, $mem_nom, $mem_prenom, $mem_sexe, $mem_article, $choixZic);
 	$preparee->execute ($nouvelles_valeurs);
-
+	
 
 
 
@@ -104,7 +115,7 @@
 
 ?>
 
-
+	</section>
 </section> 
 
 <!-- ===================== BAS DE PAGE  ===================== -->
