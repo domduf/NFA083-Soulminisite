@@ -33,7 +33,7 @@
 <!-- ===================== CONTACTS ===================== -->
   <section id="contactsTitre">
     <H2>Contacts</H2>
-    <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/"><img src="./images/facebook.ico" width="20%"/></a> Soul Latitude</p>
+    <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/"><img src="./images/facebook.ico" alt="facedebook"width="20px"/></a> Soul Latitude</p>
     <p>Mobile: 06 72 27 66 00</p>
   </section>
 </header>
@@ -50,7 +50,7 @@
 <!-- ===================== MENU ===================== -->
 <?php include("includes/menu.php"); ?>
 
-  <img id="visuel" src="./images/soulLatitudeOfficielleTruc.png" />
+  <img id="visuel" src="./images/soulLatitudeOfficielleTruc.png" alt="Les musiciens au complet www.domduf.xyz" />
 
 
 
