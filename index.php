@@ -4,10 +4,10 @@
 <!-- ======================================================= -->
 <head>
 
-<meta charset="UTF-8" lang="fr"/>
-<meta name="Soul Latitude"  content="Groupe musique RythmNBlues dix musiciens concerts live "/>
+<meta charset="UTF-8" lang="fr">
+<meta name="Soul Latitude"  content="Groupe musique RythmNBlues dix musiciens concerts live ">
 
-<link rel="icon" href="soullat2.ico" />
+<link rel="icon" href="soullat2.ico" >
 
 <title>Soul Latitude | Rythm N'Blues </title>
 <link href="./css/soul.css" rel="stylesheet" type="text/css" />
@@ -33,7 +33,7 @@
 <!-- ===================== CONTACTS ===================== -->
   <section id="contactsTitre">
     <H2>Contacts</H2>
-    <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/"><img src="./images/facebook.ico" alt="facedebook"width="20px"/></a> Soul Latitude</p>
+    <p><a href="https://fr-fr.facebook.com/Soul-Latitude-330890707038975/"><img src="./images/facebook.ico" alt="facedebook" width="20"/></a> Soul Latitude</p>
     <p>Mobile: 06 72 27 66 00</p>
   </section>
 </header>
