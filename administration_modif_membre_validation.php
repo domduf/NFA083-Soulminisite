@@ -59,8 +59,15 @@
 		<p><?php
  		/* récup des variables */
  		$choixZic=$_SESSION['choixZic'];
- 		echo ($choixZic);
-		?></br><?php
+ 		echo ('mem_id='.$choixZic);
+		?></br>
+
+
+		<?php
+		$mem_description_lien_photo=$_POST ['mem_lien_photo'];?>
+		
+		<img src ="<?php echo $_POST ['mem_lien_photo'] ; ?>"/>
+		<?php echo ($mem_description_lien_photo);?></br><?php
 		
 		$mem_description_musico = $_POST ['mem_description_musico'];
  		echo ($mem_description_musico);

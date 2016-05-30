@@ -192,11 +192,18 @@
 					<textarea  
 					name="mem_article" id="mem_article"><?php echo ($membre['mem_article']); ?></textarea>
 				</td>
-			</tr>			
+			</tr>
+
+			
 			<tr>
 				<th>mem_lien_photo</th>
-				<td><?php echo ($membre['mem_lien_photo']); ?></td>
-			</tr>			
+
+				<td><input type="text" 
+		    		name="mem_lien_photo" value="<?php echo ($membre['mem_lien_photo']); ?>" 
+		    		id="mem_lien_photo"/></td>
+			</tr>
+
+			
 			<tr>
 				<th>mem_membre_bureau</th>
 				<td><?php echo ($membre['mem_membre_bureau']); ?></td>
