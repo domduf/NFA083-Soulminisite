@@ -45,7 +45,7 @@
 	<?php include("includes/menu.php");  ?>
 <!-- ================================================ -->
 
-	<section id="accrocheAccueuil">
+	<section id="accrocheValidation">
 
   	
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
