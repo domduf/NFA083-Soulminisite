@@ -45,7 +45,7 @@
 	<?php include("includes/menu.php");  ?>
 <!-- ================================================ -->
 
-	<section id="administration">
+	<section id="accrocheAccueuil">
 
   	
   	<?php /*recupération en POST des données à transmettre pour la connection à la bd */
@@ -54,27 +54,29 @@
  if ( isset($_SESSION['login'])) {
  
  		
- 		?><p><?php
+ 		?>
+		<H3>Liste des mises à jour</H3>
+		<p><?php
  		/* récup des variables */
  		$choixZic=$_SESSION['choixZic'];
- 		echo $choixZic;
+ 		echo ($choixZic);
 		?></br><?php
 		
 		$mem_description_musico = $_POST ['mem_description_musico'];
- 		echo $mem_description_musico;
+ 		echo ($mem_description_musico);
 		?></br><?php
 		
 		$mem_nom = $_POST ['mem_nom'];
- 		echo $mem_nom;
+ 		echo ($mem_nom);
 		?></br><?php
 		
 		$mem_prenom = $_POST ['mem_prenom'];
- 		echo $mem_prenom;
+ 		echo ($mem_prenom);
 		?></br><?php
 		
  		
  		$mem_sexe = $_POST ['mem_sexe'];
- 		echo $mem_sexe;
+ 		echo ($mem_sexe);
  
  		?></br><?php
 
