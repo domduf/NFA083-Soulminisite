@@ -83,8 +83,9 @@
   			<table>	
   		      	<tr>
         			<th>Votre choix: ?</th>
-        				<td><input type="radio" name="rad-1" id="musiciens" checked="checked" value="musiciens" />gestion de la base des musiciens.<br />
-             				<input type="radio" name="rad-1" id="messages" value="messages" />consultation des messages d' internautes.<br />
+        				<td><input type="radio" name="rad-1" id="messages" checked="checked" value="messages" />consultation des messages d' internautes.<br />
+							<input type="radio" name="rad-1" id="musiciens"  value="musiciens" />gestion de la base des musiciens.<br />
+             				
              				<input type="radio" name="rad-1" id="droits"  value="droits" />gestion des droits.</td>
       			</tr>	
       			<tr>
