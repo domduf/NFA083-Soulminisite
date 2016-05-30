@@ -54,7 +54,7 @@
  if ( isset($_SESSION['login'])) {
  
  		
- 
+ 		?><p><?php
  		/* récup des variables */
  		$choixZic=$_SESSION['choixZic'];
  		echo $choixZic;
@@ -81,7 +81,7 @@
 		$mem_article = $_POST ['mem_article'];
  		echo $mem_article;
  
- 		?></br><?php
+ 		?></p><?php
 
 
 
