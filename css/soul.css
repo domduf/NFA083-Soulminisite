@@ -108,11 +108,11 @@ justify-content: space-around;
 }
 
 #visuel {
-width:60%;
+width:95%;
 max-width:800px;
-max-height:587px;
+/*max-height:587px;*/
 min-width:200px;
-min-height:147px;
+/*min-height:147px;*/
 }
 #visuelSon {
 width:80%;

@@ -50,7 +50,7 @@
 <!-- ===================== MENU ===================== -->
 <?php include("includes/menu.php"); ?>
 
-  <img id="visuel" src="./images/soulLatitudeOfficielleTruc.png" alt="Les musiciens au complet www.domduf.xyz" />
+ <div> <img id="visuel" src="./images/soulLatitudeOfficielleTruc.png" alt="Les musiciens au complet www.domduf.xyz" /> </div>
 
 
 
