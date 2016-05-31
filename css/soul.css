@@ -102,13 +102,14 @@ border: 1px solid #FFDB8C;
 #TitreSoul {
 padding:15px;
 display: flex;
+
 flex-direction: row-reverse;
 flex-wrap: wrap;
 justify-content: space-around;
 }
 
 #visuel {
-width:95%;
+width:85%;
 max-width:800px;
 /*max-height:587px;*/
 min-width:200px;
@@ -121,10 +122,16 @@ max-height:587px;
 min-width:200px;
 min-height:147px;
 }
+
+
 #centre {
-padding:10px;
+margin-left:5%;
+margin-right:5%;
+
+padding:1px;
 display: flex;
-justify-content: space-around;
+flex-wrap: wrap;
+justify-content: space-between;
 /*align-items: center;*/
 }
 
