@@ -45,7 +45,7 @@
  
  	<?php   /* "Boucle" d'affichage */
 	
-while ($musico = $musicos->fetch()) {?>
+		if ($musico = $musicos->fetch()) {?>
   
   <!-- ============ ICI le titre avec le nom transmis par l'URL ============-->
   <section id="Titre" >
@@ -78,9 +78,10 @@ while ($musico = $musicos->fetch()) {?>
 
 
 
-	<!-- ================== Article ici ======================= -->
-    <span id="accrocheAccueuil">
+	<!-- ================== Article ici =================accrocheMusico====== -->
    
+	 <div id="accrocheMusico">
+   		<div>	
     
 	<!-- mettre instrument joué(s) par musico ici -->
 		<?php 
@@ -110,10 +111,10 @@ while ($musico = $musicos->fetch()) {?>
 		</p>
 		
 
-
+</div>
 	
 	
-	</span>
+	</div>
 
 
 </section>

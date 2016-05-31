@@ -1,7 +1,7 @@
 /* style du site general */
 body {
 color:#FBC31A;/*#FFDB70*/
-margin:5; /*evite barre defilement*/
+margin:3px; /*evite barre defilement*/
 background-color: black;
 background-size:20%;
 background-image: url("../images/logoSoul.png");
@@ -50,6 +50,22 @@ font-size:15px;
 
 }
 
+
+#accrocheMusico {
+margin-top:1%;
+margin-left:2%;
+margin-right:1%;
+/*margin-top:3%;*/
+max-width:700px;
+background-color:rgba(167, 85, 9, 0.5);/*#4F4424;*/
+border-style:solid;
+border-width:3px;
+border-color:#FFDB8C;
+border-radius:6px;
+padding:20px;
+font-size:15px;
+
+}
 #accrocheValidation {
 margin-left:8%;
 margin-right:5%;
