@@ -93,25 +93,7 @@
 				<th>mem_id</th>
 				<td><?php echo ($membre['mem_id']); ?></td>	
 			</tr>
-			
-			<tr>
-				<th>mem_login</th>
-				<td><?php echo ($membre['mem_login']); ?></td>
-			</tr>
-			
-			<tr>
-				<th>mem_mdp</th>
-				<td>
-				<?php /* ATTENTION au mot de passe... */
-				if ($login==$membre['mem_login']){
-					echo ($membre['mem_mdp']);
-					}
-				else {
-					echo ('Vous n\'êtes pas cette personne...');
-					}?>
-				</td>
-			</tr>
-						
+				
 			<tr>
 				<th>mem_persona</th>
 				<td><?php echo ($membre['mem_persona']); ?></td>
