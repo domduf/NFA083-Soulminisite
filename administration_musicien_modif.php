@@ -102,12 +102,12 @@
 
 					if ($membre['mem_persona']=='Gestionaire') {?>
 						<option value="Gestionaire" selected="selected">Gestionaire</option>
-						
-					<?php }
+						<?php }
+
 					else {
 					$choix_persona = array('Internaute','Mobinaute' ,'');
 					foreach ($choix_persona as $persona) { ?>
-						<option value="<?php echo ($persona); ?>" 
+							<option value="<?php echo ($persona); ?>" 
 									<?php 
 										if ($persona == $membre['mem_persona']) { ?>
 										 selected="selected" 
@@ -115,15 +115,34 @@
 										><?php
 									
 							echo ($persona); ?>
-						</option>
+							</option>
 							<?php }} ?>
 				</select>
-			
+				</td>
 		
 			</tr>	
 			<tr>
 				<th>mem_activite</th>
-				<td><?php echo ($membre['mem_activite']); ?></td>
+				<td>
+				<select name="mem_activite" id ="mem_activite">
+		 			<?php 
+
+					
+					$choix_activite = array('oui','non');
+					foreach ($choix_activite as $activite) { ?>
+							<option value="<?php echo ($activite); ?>" 
+									<?php 
+										if ($activite == $membre['mem_activite']) { ?>
+										 selected="selected" 
+										<?php } ?> 
+										><?php
+									
+							echo ($activite); ?>
+							</option>
+							<?php } ?>
+				</select>
+				</td>
+				
 			</tr>
 						
 			<tr>

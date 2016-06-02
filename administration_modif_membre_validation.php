@@ -69,9 +69,20 @@
 		<img src ="<?php echo $_POST ['mem_lien_photo'] ; ?>"/>
 		<?php echo ($mem_description_lien_photo);?></br><?php
 		
+		$mem_persona = $_POST ['mem_persona'];
+		echo ($mem_persona);
+ 		?></br><?php
+
+		$mem_activite = $_POST ['mem_activite'];
+		echo ('musicien: '.$mem_activite);
+ 		?></br><?php
+
+
 		$mem_description_musico = $_POST ['mem_description_musico'];
  		echo ($mem_description_musico);
 		?></br><?php
+
+
 		
 		$mem_nom = $_POST ['mem_nom'];
  		echo ($mem_nom);
@@ -81,9 +92,7 @@
  		echo ($mem_prenom);
 		?></br><?php
 
-		$mem_persona = $_POST ['mem_persona'];
-		echo ($mem_persona);
- 		?></br><?php
+		
 
  		$mem_sexe = $_POST ['mem_sexe'];
  		echo ($mem_sexe);
@@ -106,12 +115,13 @@
 	/*--------INSERTION EN BD -----------------*/
 	
 	$sql_update_membre = "	UPDATE 	membre
-							SET mem_description_musico = ?, mem_nom = ?, mem_prenom = ?, mem_persona = ?, mem_sexe = ?, mem_article = ?
+							SET mem_description_musico = ?, mem_nom = ?, mem_prenom = ?, mem_persona = ?, mem_activite = ?,
+							 mem_sexe = ?, mem_article = ?
 							WHERE mem_id = ? " ;
 			
   	/* requete préparée */
   	$preparee = $pdo->prepare($sql_update_membre);
-  	$nouvelles_valeurs= array ($mem_description_musico, $mem_nom, $mem_prenom, $mem_persona, $mem_sexe, $mem_article, $choixZic);
+  	$nouvelles_valeurs= array ($mem_description_musico, $mem_nom, $mem_prenom, $mem_persona, $mem_activite, $mem_sexe, $mem_article, $choixZic);
 	
 	/* execution de la requete préparée plus haut */
 	$preparee->execute ($nouvelles_valeurs);
