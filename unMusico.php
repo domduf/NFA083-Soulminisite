@@ -110,6 +110,13 @@
 		<?php echo $musico["mem_article"]; ?> 
 		</p>
 		
+		<?php if ($musico["mem_centre_interet"]){ ?>
+		<p>---------------------</p>
+		<p>
+		<?php echo ('Les centres d\'interêt de '.$musico['mem_prenom'].': ' .$musico["mem_centre_interet"]); ?> 
+		</p>
+		<?php } ?>
+		
 
 </div>
 	
