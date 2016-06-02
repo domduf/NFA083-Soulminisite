@@ -96,8 +96,32 @@
 				
 			<tr>
 				<th>mem_persona</th>
-				<td><?php echo ($membre['mem_persona']); ?></td>
-			</tr>
+				<td>
+				<select name="mem_persona" id ="mem_persona">
+		 
+		   			<option value="<?php echo ($membre['mem_persona']); ?>" selected="selected" ><?php echo ($membre['mem_persona']); ?>
+					</option>
+				</select>
+				</td>
+			
+				<td>
+				
+					
+						<?php 
+									echo ('salut');
+									/*require './includes/recuperer_enum.inc.php';*/
+									$mem_persona= $membre['mem_persona'];
+									$sql_enum = "	SHOW COLUMNS 
+													FROM membre 
+													LIKE  $mem_persona ";
+									$enums = $pdo->query($sql_enum);
+								/*$enums_personas=recuperer_enum('membre', $membre['mem_persona'] );*/
+								while ($enum=$enums->fetch()){
+				?></td><td><?php
+									 echo ($enum.' </br>'); }?>
+								
+				</td>
+			</tr>	
 			<tr>
 				<th>mem_activite</th>
 				<td><?php echo ($membre['mem_activite']); ?></td>
@@ -140,7 +164,8 @@
 			<tr>
 				<th>mem_date_naiss</th>
 				<td><?php echo ($membre['mem_date_naiss']); ?></td>
-			</tr>			
+			</tr>	
+		
 			<tr>
 				<th>mem_sexe</th>
 				<td>
@@ -160,10 +185,9 @@
 					<?php } ?>	
 
          		</select>
-				
-				
 				</td>
-			</tr>			
+			</tr>
+			
 			<tr>
 				<th>mem_centre_interet</th>
 				<td><?php echo ($membre['mem_centre_interet']); ?></td>
