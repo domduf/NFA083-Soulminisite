@@ -91,7 +91,10 @@
 		$mem_prenom = $_POST ['mem_prenom'];
  		echo ($mem_prenom);
 		?></br><?php
-
+		
+		$mem_date_naiss = $_POST ['mem_date_naiss'];
+ 		echo ('Date naissance: '.$mem_date_naiss);
+		?></br><?php
 		
 
  		$mem_sexe = $_POST ['mem_sexe'];
@@ -115,13 +118,13 @@
 	/*--------INSERTION EN BD -----------------*/
 	
 	$sql_update_membre = "	UPDATE 	membre
-							SET mem_description_musico = ?, mem_nom = ?, mem_prenom = ?, mem_persona = ?, mem_activite = ?,
+							SET mem_description_musico = ?, mem_nom = ?, mem_prenom = ?, mem_date_naiss = ?, mem_persona = ?, mem_activite = ?,
 							 mem_sexe = ?, mem_article = ?
 							WHERE mem_id = ? " ;
 			
   	/* requete préparée */
   	$preparee = $pdo->prepare($sql_update_membre);
-  	$nouvelles_valeurs= array ($mem_description_musico, $mem_nom, $mem_prenom, $mem_persona, $mem_activite, $mem_sexe, $mem_article, $choixZic);
+  	$nouvelles_valeurs= array ($mem_description_musico, $mem_nom, $mem_prenom, $mem_date_naiss, $mem_persona, $mem_activite, $mem_sexe, $mem_article, $choixZic);
 	
 	/* execution de la requete préparée plus haut */
 	$preparee->execute ($nouvelles_valeurs);

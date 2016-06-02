@@ -156,11 +156,26 @@
 						
 			<tr>
 				<th>mem_civilite</th>
-				<td><?php echo ($membre['mem_civilite']); ?></td>
-				
-				
-				
-			</tr>			
+				<td>
+				<select name="mem_civilite" id ="mem_civilite">
+		 			<?php 
+					$choix_civilite = array('M.','Mme','Mlle');
+					foreach ($choix_civilite as $civilite) { ?>
+							<option value="<?php echo ($civilite); ?>" 
+									<?php 
+										if ($civilite == $membre['mem_civilite']) { ?>
+										 selected="selected" 
+										<?php } ?> 
+										><?php
+									
+							echo ($civilite); ?>
+							</option>
+							<?php } ?>
+				</select>
+				</td>	
+			</tr>
+
+			
 			<tr>
 				<th>mem_nom</th>
 				<td>
@@ -181,7 +196,9 @@
 						
 			<tr>
 				<th>mem_date_naiss</th>
-				<td><?php echo ($membre['mem_date_naiss']); ?></td>
+				<td>
+				<input type="date" name="mem_date_naiss" value="<?php echo ($membre['mem_date_naiss']); ?>">
+				</td>
 			</tr>	
 		
 			<tr>
