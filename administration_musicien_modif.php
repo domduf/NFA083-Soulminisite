@@ -225,7 +225,10 @@
 			
 			<tr>
 				<th>mem_centre_interet</th>
-				<td><?php echo ($membre['mem_centre_interet']); ?></td>
+				<td>
+					<input type="text" 
+					name="mem_centre_interet" id="mem_centre_interet" value="<?php echo ($membre['mem_centre_interet']); ?>"/>
+				</td>
 			</tr>			
 			<tr>
 				<th>mem_article</th>

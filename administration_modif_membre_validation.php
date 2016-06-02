@@ -82,14 +82,16 @@
  		echo ($mem_description_musico);
 		?></br><?php
 
-
+		$mem_civilite = $_POST ['mem_civilite'];
+ 		echo ($mem_civilite);
+		?></br><?php
 		
 		$mem_nom = $_POST ['mem_nom'];
- 		echo ($mem_nom);
+ 		echo ('NOM: '.$mem_nom);
 		?></br><?php
 		
 		$mem_prenom = $_POST ['mem_prenom'];
- 		echo ($mem_prenom);
+ 		echo ('Prenom: '.$mem_prenom);
 		?></br><?php
 		
 		$mem_date_naiss = $_POST ['mem_date_naiss'];
@@ -99,12 +101,14 @@
 
  		$mem_sexe = $_POST ['mem_sexe'];
  		echo ($mem_sexe);
- 
+ 		?></br><?php
+
+		$mem_centre_interet = $_POST ['mem_centre_interet'];
+ 		echo ('Centre d\'interêt: '.$mem_centre_interet);
  		?></br><?php
 
 		$mem_article = $_POST ['mem_article'];
  		echo $mem_article;
- 
  		?></p><?php
 
 
@@ -118,13 +122,15 @@
 	/*--------INSERTION EN BD -----------------*/
 	
 	$sql_update_membre = "	UPDATE 	membre
-							SET mem_description_musico = ?, mem_nom = ?, mem_prenom = ?, mem_date_naiss = ?, mem_persona = ?, mem_activite = ?,
-							 mem_sexe = ?, mem_article = ?
+							SET mem_description_musico = ?, mem_civilite = ?, 
+							mem_nom = ?, mem_prenom = ?, mem_date_naiss = ?, 
+							mem_persona = ?, mem_activite = ?,
+							mem_sexe = ?,mem_centre_interet = ?, mem_article = ?
 							WHERE mem_id = ? " ;
 			
   	/* requete préparée */
   	$preparee = $pdo->prepare($sql_update_membre);
-  	$nouvelles_valeurs= array ($mem_description_musico, $mem_nom, $mem_prenom, $mem_date_naiss, $mem_persona, $mem_activite, $mem_sexe, $mem_article, $choixZic);
+  	$nouvelles_valeurs= array ($mem_description_musico, $mem_civilite, $mem_nom, $mem_prenom, $mem_date_naiss, $mem_persona, $mem_activite, $mem_sexe, 								$mem_centre_interet, $mem_article, $choixZic);
 	
 	/* execution de la requete préparée plus haut */
 	$preparee->execute ($nouvelles_valeurs);
