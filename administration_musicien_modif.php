@@ -98,29 +98,28 @@
 				<th>mem_persona</th>
 				<td>
 				<select name="mem_persona" id ="mem_persona">
-		 
-		   			<option value="<?php echo ($membre['mem_persona']); ?>" selected="selected" ><?php echo ($membre['mem_persona']); ?>
-					</option>
+		 			<?php 
+
+					if ($membre['mem_persona']=='Gestionaire') {?>
+						<option value="Gestionaire" selected="selected">Gestionaire</option>
+						
+					<?php }
+					else {
+					$choix_persona = array('Internaute','Mobinaute' ,'');
+					foreach ($choix_persona as $persona) { ?>
+						<option value="<?php echo ($persona); ?>" 
+									<?php 
+										if ($persona == $membre['mem_persona']) { ?>
+										 selected="selected" 
+										<?php } ?> 
+										><?php
+									
+							echo ($persona); ?>
+						</option>
+							<?php }} ?>
 				</select>
-				</td>
 			
-				<td>
-				
-					
-						<?php 
-									echo ('salut');
-									/*require './includes/recuperer_enum.inc.php';*/
-									$mem_persona= $membre['mem_persona'];
-									$sql_enum = "	SHOW COLUMNS 
-													FROM membre 
-													LIKE  $mem_persona ";
-									$enums = $pdo->query($sql_enum);
-								/*$enums_personas=recuperer_enum('membre', $membre['mem_persona'] );*/
-								while ($enum=$enums->fetch()){
-				?></td><td><?php
-									 echo ($enum.' </br>'); }?>
-								
-				</td>
+		
 			</tr>	
 			<tr>
 				<th>mem_activite</th>
